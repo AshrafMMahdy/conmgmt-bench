@@ -19,7 +19,7 @@ What you need that is not here: the FIDIC Yellow Book 2017 General Conditions (c
 
 ## Scoring
 
-Per scenario: each expectation 0 / 0.5 / 1, and each key item found / partial / missed. Report both; do not collapse them into one number. `scoring/HOW_TO_SCORE.md` has the detail and `scoring/results-template.csv` the sheet. Send results as a pull request to `scoring/leaderboard.md` with the outputs attached.
+Per scenario: each expectation 0 / 0.5 / 1, and each key item found / partial / missed. Report both; do not collapse them into one number. `scoring/HOW_TO_SCORE.md` has the detail and `scoring/results-template.csv` the sheet. Send results as a pull request to `scoring/leaderboard.md` with the outputs attached (https://github.com/AshrafMMahdy/conmgmt-bench).
 
 ## Sponsored runs
 
