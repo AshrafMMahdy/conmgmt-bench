@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDC-SUB-005 Gap Analysis — Interactive Issue Tracker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#f4f5f7;color:#1a1a2e;padding:24px;max-width:1100px;margin:0 auto}
+h1{font-size:1.4rem;margin-bottom:4px}
+.subtitle{color:#555;font-size:.85rem;margin-bottom:20px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.filters button{padding:7px 14px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;font-size:.8rem;font-weight:500;transition:all .15s}
+.filters button:hover{border-color:#1a73e8;color:#1a73e8}
+.filters button.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
+.stats{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.stat-card{background:#fff;border-radius:8px;padding:12px 18px;min-width:100px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.stat-card .num{font-size:1.8rem;font-weight:700}
+.stat-card .label{font-size:.72rem;color:#666;text-transform:uppercase;letter-spacing:.03em}
+.stat-card.crit .num{color:#d93025}
+.stat-card.high .num{color:#e37400}
+.stat-card.med .num{color:#188038}
+.issue{background:#fff;border-radius:8px;padding:16px 18px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);border-left:4px solid #ccc;transition:all .2s;cursor:pointer}
+.issue.crit{border-left-color:#d93025}
+.issue.high{border-left-color:#e37400}
+.issue.med{border-left-color:#188038}
+.issue-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.issue-id{font-weight:700;font-size:.95rem}
+.issue-sev{font-size:.68rem;font-weight:600;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.sev-crit{background:#fce8e6;color:#d93025}
+.sev-high{background:#fef7e0;color:#e37400}
+.sev-med{background:#e6f4ea;color:#188038}
+.issue-ref{font-size:.75rem;color:#666;margin-bottom:6px}
+.issue-desc{font-size:.85rem;line-height:1.5;margin-bottom:6px}
+.issue-change{font-size:.8rem;background:#f0f4ff;padding:8px 10px;border-radius:4px;line-height:1.4;color:#1a3a6b}
+.issue-src{font-size:.7rem;color:#888;margin-top:4px}
+.no-results{text-align:center;padding:40px;color:#999}
+.summary-box{background:#fff;border-radius:8px;padding:18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:.85rem;line-height:1.6}
+.summary-box strong{color:#d93025}
+.corrigendum{background:#fef7e0;border-left:3px solid #e37400;padding:10px 14px;border-radius:4px;margin-bottom:16px;font-size:.78rem;line-height:1.5}
+</style>
+</head>
+<body>
+<script>/* chat bridge */function sendPrompt(t){try{parent.postMessage({type:'send-prompt',text:String(t||'')},'*');}catch(e){}}window.sendPrompt=sendPrompt;</script>
+<h1>PDC-SUB-005 Rev 0 — Ilmatek TP-005 Subcontract</h1>
+<p class="subtitle">Gap Analysis · 17 issues · Reviewed against PDC-PC-001 Rev C, PDC-SC-001 & Tender IL-7729</p>
+
+<div class="summary-box">
+<strong>⛔ Not fit to sign.</strong> 5 CRITICAL issues must be resolved before execution — including Swedish law for a Finnish project, Stockholm arbitration, a unilateral variation suspension right, and a complete departure from the YSE 1998 they tendered. Part 2 (Conditions, Clauses 1–13) is present and reviewed in full. Click any issue row to copy its details for your covering letter.
+</div>
+
+<div class="corrigendum">
+<strong>⚠ Corrigendum (3 Aug 2026):</strong> The initial analysis incorrectly listed Part 2 as missing. Part 2 — CONDITIONS (Clauses 1–13) is present in the document, was ingested, and every clause was analysed. The error was caused by misreading the internal cross-reference "as set out in Part 2" as an external dependency.
+</div>
+
+<div class="stats">
+<div class="stat-card crit"><div class="num">5</div><div class="label">CRITICAL</div></div>
+<div class="stat-card high"><div class="num">8</div><div class="label">HIGH</div></div>
+<div class="stat-card med"><div class="num">4</div><div class="label">MEDIUM</div></div>
+<div class="stat-card"><div class="num">17</div><div class="label">TOTAL</div></div>
+</div>
+
+<div class="filters">
+<button class="active" onclick="filter('all',this)">All (17)</button>
+<button onclick="filter('crit',this)">CRITICAL (5)</button>
+<button onclick="filter('high',this)">HIGH (8)</button>
+<button onclick="filter('med',this)">MEDIUM (4)</button>
+<button onclick="filter('back-to-back',this)">Back-to-back gaps (13)</button>
+<button onclick="filter('tender',this)">Tender walk-backs (4)</button>
+</div>
+
+<div id="issues"></div>
+<div class="no-results" id="no-results" style="display:none">No issues match this filter.</div>
+
+<script>
+const issues = [
+{id:"C1",sev:"crit",tag:"back-to-back",clause:"Clause 13.1 / Part 1",title:"Governing law: Sweden must be Finland",desc:"Swedish law for a Finnish project under a Finnish-law main contract — irreconcilable back-to-back failure. Both parties and the site are Finnish.",change:"Replace \"Sweden\" with \"Finland\".",src:"Main Contract Sub-Clause 1.4"},
+{id:"C2",sev:"crit",tag:"back-to-back",clause:"Clause 13.2 / Part 1",title:"Dispute resolution: SCC Stockholm → FCC Helsinki, 3 arbitrators",desc:"Stockholm seat, 1 arbitrator vs Helsinki seat, 3 arbitrators. Parallel tracks make joined proceedings impossible. One arbitrator inadequate for EUR 22.3M dispute.",change:"Arbitration under FCC Rules, seat Helsinki, three arbitrators, English.",src:"Main Contract Sub-Clause 21.6"},
+{id:"C3",sev:"crit",tag:"back-to-back",clause:"Clause 4.2",title:"Concurrent delay: full EOT must become apportionment",desc:"Full EOT for whole period of concurrency even where subcontractor at fault. Contractor cannot recover this from Employer under main contract SP-7.",change:"Delete clause. Replace: no EOT for period of concurrency where subcontractor also at fault.",src:"Main Contract Particular Condition SP-7"},
+{id:"C4",sev:"crit",tag:"back-to-back",clause:"Clause 7.3",title:"Variation suspension right must be deleted",desc:"Subcontractor may suspend if value not agreed in 14 days, without liability. Main contract requires proceed-first. Likely unenforceable under Finnish Unfair Contract Terms Act (1255/1993).",change:"Delete. Replace: proceed without delay; Contractor makes interim valuation within 14 days.",src:"Main Contract Particular Condition SP-9"},
+{id:"C5",sev:"crit",tag:"tender",clause:"Part 1 — Form of subcontract",title:"Form: own standard conditions — tendered YSE 1998",desc:"Tender IL-7729 explicitly stated 'YSE 1998, subject to section 4'. Subcontract is on own conditions (Part 2, Clauses 1–13 — present and reviewed). Fundamental departure from evaluation basis.",change:"Subcontract must be on YSE 1998 as tendered, or FIDIC-based back-to-back.",src:"Tender Offer IL-7729"},
+{id:"H1",sev:"high",tag:"back-to-back",clause:"Clause 3.3",title:"Add sectional completion obligations + per-section LDs",desc:"Single completion date (6 Mar 2027) vs 4 sections (May/Jul/Oct 2027, Jan 2028). No intermediate mechanism for integration risk.",change:"Insert sectional milestones matching Sections 1–2, per-section LD rates mirroring main contract.",src:"Sectional Completion Schedule PDC-SC-001"},
+{id:"H2",sev:"high",tag:"back-to-back",clause:"Clause 5.2 / Part 1",title:"Cap LDs at 10% of Subcontract Sum",desc:"EUR 15K/day, no aggregate cap vs main contract 10% cap. Unlimited LD exposure while Contractor's liability is capped.",change:"Insert: aggregate delay damages capped at 10% of Subcontract Sum.",src:"Main Contract Particular Condition SP-13"},
+{id:"H3",sev:"high",tag:"back-to-back",clause:"Clause 6.2 / Part 1",title:"Retention: 10% → 5%, release half at Section 1",desc:"Double retention vs main contract; all held to end vs half released at Section 1. EUR 2.23M trapped vs EUR 1.11M.",change:"Reduce to 5%; release 50% at Section 1, 50% at DNP expiry.",src:"Main Contract Particular Condition SP-12"},
+{id:"H4",sev:"high",tag:"back-to-back",clause:"Clause 8.1 / Part 1",title:"Defects liability: 12 months → 24 months",desc:"Half the main contract DLP. Contractor carries year-2 defect risk alone with no subcontractor obligation.",change:"Replace \"12 months\" with \"24 months\".",src:"Main Contract Sub-Clause 11.1"},
+{id:"H5",sev:"high",tag:"back-to-back",clause:"Clause 9.3 / Part 1",title:"PI insurance: EUR 2M/3yr → EUR 10M/6yr",desc:"EUR 8M gap in cover; 3-year tail vs 6-year requirement. Design defect could exhaust sub's cover.",change:"Increase to EUR 10,000,000 maintained for 6 years.",src:"Main Contract Particular Condition SP-16"},
+{id:"H6",sev:"high",tag:"tender",clause:"Clause 9.1 / Part 1",title:"Liability cap: 50% → remove or 100%",desc:"Walk-back from tender (implied 100%). Loss above EUR 11.14M is unrecoverable from subcontractor.",change:"Remove cap entirely, or set at 100% with gross-negligence carve-out.",src:"Tender IL-7729"},
+{id:"H7",sev:"high",tag:"back-to-back",clause:"Clause 10.1 / Part 1",title:"Performance security: 5% → 10%",desc:"Contractor provides 10% to Employer but holds only 5% from sub — EUR 1.11M uncovered gap.",change:"Increase to 10% of the Subcontract Sum.",src:"Main Contract Sub-Clause 4.2"},
+{id:"H8",sev:"high",tag:"back-to-back",clause:"Clause 2.3",title:"Design obligation: add guaranteed performance outcomes",desc:"'Reasonable skill and care' vs PUE, WUE ≤0.25, free cooling ≥8,300h, waste-heat ≥4MW. Performance criteria listed in 2.2 but not guaranteed.",change:"Amend: skill and care PLUS guaranteed achievement of Clause 2.2 outcomes.",src:"Main Contract Particular Condition SP-6"},
+{id:"M1",sev:"med",tag:"tender",clause:"Clause 6.1 / Part 1",title:"Payment: 60 days → 45 days as tendered",desc:"Tendered 45 days; subcontract 60 days. Cashflow gap vs Employer's ~73-day payment cycle. ~EUR 1.86M/month float.",change:"Reduce to 45 days, or 30 days with pay-when-paid protection.",src:"Main Contract SP-4(e) / Tender IL-7729"},
+{id:"M2",sev:"med",tag:"back-to-back",clause:"Clause 6.3",title:"Late payment interest: 8% flat → statutory rate",desc:"8% may be below Finnish statutory minimum (ECB+8%, currently ~12%). Risk of unenforceability.",change:"Interest at rate prescribed by Finnish Interest Act (633/1982).",src:"Finnish Interest Act (633/1982)"},
+{id:"M3",sev:"med",tag:"tender",clause:"Part 1 — Date for Commencement",title:"Commencement: floating 10WD → fixed programme date",desc:"Floating start misaligned with main contract commencement 2 Mar 2026. Compresses programme if accepted now.",change:"Fix commencement to align with main contract programme; adjust Time for Completion.",src:"Sectional Completion Schedule PDC-SC-001"},
+{id:"M4",sev:"med",tag:"none",clause:"Part 1 — Advance Payment",title:"Advance payment: 10%/12% — acceptable",desc:"Advance payment and repayment terms match the main contract. No change needed.",change:"No change required.",src:"Main Contract Sub-Clause 14.2"}
+];
+
+function render(filterTag){
+  const container = document.getElementById('issues');
+  const noRes = document.getElementById('no-results');
+  const filtered = filterTag === 'all' ? issues : issues.filter(i=>i.sev===filterTag||i.tag===filterTag);
+  if(!filtered.length){container.innerHTML='';noRes.style.display='block';return}
+  noRes.style.display='none';
+  container.innerHTML = filtered.map(i=>`
+    <div class="issue ${i.sev}" onclick="copyIssue('${i.id}')" title="Click to copy issue details">
+      <div class="issue-header">
+        <span class="issue-id">${i.id}. ${i.title}</span>
+        <span class="issue-sev sev-${i.sev}">${i.sev==='crit'?'CRITICAL':i.sev.toUpperCase()}</span>
+      </div>
+      <div class="issue-ref">📄 ${i.clause} · Source: ${i.src}</div>
+      <div class="issue-desc">${i.desc}</div>
+      <div class="issue-change"><strong>Required change:</strong> ${i.change}</div>
+    </div>
+  `).join('');
+}
+
+function filter(tag,btn){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render(tag);
+}
+
+function copyIssue(id){
+  const i = issues.find(x=>x.id===id);
+  const txt = `**${i.id} — ${i.title}** [${i.sev.toUpperCase()}]\nClause: ${i.clause}\nIssue: ${i.desc}\nRequired: ${i.change}\nSource: ${i.src}`;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const el = event.target.closest('.issue');
+    el.style.background='#e8f5e9';
+    setTimeout(()=>el.style.background='',600);
+  });
+}
+
+render('all');
+</script>
+</body>
+</html>

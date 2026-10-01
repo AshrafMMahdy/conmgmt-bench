@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="180.0 220.0 320.0 180.0">
+<rect x="180.0" y="220.0" width="320.0" height="180.0" fill="#ffffff"/>
+<rect x="221.5" y="258.0" width="210.0" height="57.5" fill="#fcfcfc" stroke="#000" stroke-width="0.9"/>
+<text x="326.5" y="257.0" font-family="Arial" font-size="3.2" text-anchor="middle" fill="#000" font-weight="bold">POLARIS DC-1 — 420.0m × 115.0m</text>
+<rect x="230.5" y="297.5" width="36.0" height="12.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="248.5" y="303.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">Data Hall 1</text>
+<rect x="275.5" y="297.5" width="36.0" height="12.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="293.5" y="303.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">Data Hall 2</text>
+<rect x="320.5" y="297.5" width="36.0" height="12.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="338.5" y="303.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">Data Hall 3</text>
+<rect x="365.5" y="297.5" width="36.0" height="12.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="383.5" y="303.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">Data Hall 4</text>
+<rect x="230.5" y="291.5" width="120.85" height="6.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="290.925" y="294.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">MEP Spine</text>
+<rect x="320.5" y="261.0" width="12.5" height="12.5" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<rect x="239.5" y="265.75" width="20.0" height="13.75" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="249.5" y="273.025" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">Admin/NOC</text>
+<rect x="392.5" y="267.0" width="19.0" height="12.5" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<text x="402.0" y="273.65" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#666">NE Bldg</text>
+<rect x="223.5" y="307.5" width="12.5" height="7.0" fill="#e8e8e8" stroke="#444" stroke-width="0.3"/>
+<rect x="196.5" y="315.75" width="260.0" height="3.5" fill="#f0f0f0" stroke="#777" stroke-width="0.5"/>
+<text x="326.5" y="316.5" font-family="Arial" font-size="2.8" text-anchor="middle" fill="#000" font-weight="bold">TIKKURILANTIE — 50 km/h</text>
+<rect x="282.625" y="315.5" width="2.25" height="11.0" fill="#fafafa" stroke="#555" stroke-width="0.4"/>
+<text x="285.5" y="321.5" font-family="Arial" font-size="2.3" fill="#000" font-weight="bold">SHARED ACCESS</text>
+<text x="285.5" y="322.75" font-family="Arial" font-size="1.7" fill="#555">9.0m · shared with neighbour</text>
+<circle cx="283.75" cy="315.5" r="3.5" fill="#c0392b" stroke="#000" stroke-width="0.7"/>
+<text x="289.75" y="314.0" font-family="Arial" font-size="3.4" fill="#c0392b" font-weight="bold">SITE GATE — THE ONLY ONE</text>
+<rect x="181.5" y="300.0" width="20.0" height="15.5" fill="#ddd" stroke="#000" stroke-width="0.4" stroke-dasharray="3 2"/>
+<text x="191.5" y="307.5" font-family="Arial" font-size="2.0" text-anchor="middle" fill="#666" transform="rotate(-90 191.5 307.5)">OPERATING DC (NEIGHBOUR) 24/7</text>
+<rect x="221.5" y="256.5" width="210.0" height="2.5" fill="rgba(154,184,154,0.5)" stroke="#9ab89a" stroke-width="0.3" stroke-dasharray="4 2"/>
+<text x="326.5" y="258.25" font-family="Arial" font-size="1.9" text-anchor="middle" fill="#555">RETAINED TREE BELT — 5m NO-ENCROACHMENT</text>
+<rect x="429.0" y="256.5" width="2.5" height="60.5" fill="rgba(154,184,154,0.5)" stroke="#9ab89a" stroke-width="0.3" stroke-dasharray="4 2"/>
+<line x1="289.0" y1="260.5" x2="419.0" y2="272.0" stroke="#e74c3c" stroke-width="0.7" stroke-dasharray="10 3 3 3"/>
+<text x="346.5" y="266.5" font-family="Arial" font-size="2.1" fill="#e74c3c" font-weight="bold">110 kV OVERHEAD LINE — CRANE EXCLUSION ZONE</text>
+<rect x="274.75" y="289.0" width="18.0" height="26.5" fill="rgba(80,80,80,0.12)" stroke="#666" stroke-width="0.5"/>
+<rect x="236.5" y="287.0" width="182.5" height="4.0" fill="rgba(80,80,80,0.12)" stroke="#666" stroke-width="0.5"/>
+<text x="271.75" y="303.0" font-family="Arial" font-size="2.4" fill="#444" transform="rotate(-90 271.75 303.0)" text-anchor="middle">VEHICLE SPINE 6.0m</text>
+<text x="326.5" y="286.0" font-family="Arial" font-size="2.4" fill="#444" text-anchor="middle">E-W DISTRIBUTOR 6.0m 2-WAY</text>
+<circle cx="283.75" cy="304.5" r="6.25" fill="none" stroke="#444" stroke-width="0.4" stroke-dasharray="5 3"/>
+<text x="273.75" y="303.0" font-family="Arial" font-size="1.9" fill="#555">TURNING HEAD Ø25m</text>
+<rect x="277.75" y="309.5" width="12.0" height="3.5" fill="rgba(231,76,60,0.12)" stroke="#e74c3c" stroke-width="0.35" stroke-dasharray="2 1"/>
+<text x="283.75" y="311.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">HOLDING LANE</text>
+<polygon points="283.66,313.00 293.75,313.00 294.75,285.50 420.00,286.50 419.00,314.00 391.50,314.00 356.50,314.00 320.50,314.00 284.50,314.00 248.50,314.00 245.50,313.00 246.50,287.00 278.00,288.00 279.00,284.00 262.50,283.00 261.50,289.00 246.50,289.00 227.50,288.00 226.50,312.00 272.87,312.01 281.37,313.01 281.13,314.99 272.63,313.99 226.50,314.00 225.50,288.00 246.50,287.00 261.50,287.00 260.50,283.00 279.00,282.00 280.00,288.00 246.50,289.00 247.50,313.00 248.50,312.00 284.50,312.00 320.50,312.00 356.50,312.00 391.50,312.00 419.00,312.00 418.00,286.50 294.75,287.50 295.75,313.00 283.84,315.00" fill="rgba(46,204,113,0.25)" stroke="#27ae60" stroke-width="0.4"/>
+<polyline points="283.75,314.00 294.75,313.00 294.75,286.50 419.00,286.50 419.00,313.00 391.50,313.00 356.50,313.00 320.50,313.00 284.50,313.00 248.50,313.00 246.50,313.00 246.50,288.00 279.00,288.00 279.00,283.00 261.50,283.00 261.50,288.00 246.50,288.00 226.50,288.00 226.50,313.00 272.75,313.00 281.25,314.00" fill="none" stroke="#27ae60" stroke-width="0.3" stroke-dasharray="4 2"/>
+<text x="326.5" y="314.0" font-family="Arial" font-size="2.2" text-anchor="middle" fill="#27ae60" font-weight="bold">PEDESTRIAN ROUTE 2.0m — PHYSICALLY SEGREGATED</text>
+<rect x="247.0" y="310.0" width="3.0" height="6.0" fill="rgba(46,204,113,0.15)" stroke="#27ae60" stroke-width="0.3" stroke-dasharray="2 1"/>
+<text x="248.5" y="312.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#27ae60">XING</text>
+<rect x="283.0" y="310.0" width="3.0" height="6.0" fill="rgba(46,204,113,0.15)" stroke="#27ae60" stroke-width="0.3" stroke-dasharray="2 1"/>
+<text x="284.5" y="312.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#27ae60">XING</text>
+<rect x="282.25" y="310.0" width="3.0" height="6.0" fill="rgba(46,204,113,0.15)" stroke="#27ae60" stroke-width="0.3" stroke-dasharray="2 1"/>
+<text x="283.75" y="312.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#27ae60">XING</text>
+<rect x="417.5" y="310.0" width="3.0" height="6.0" fill="rgba(46,204,113,0.15)" stroke="#27ae60" stroke-width="0.3" stroke-dasharray="2 1"/>
+<text x="419.0" y="312.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#27ae60">XING</text>
+<rect x="224.0" y="260.5" width="28.125" height="20.0" fill="rgba(52,152,219,0.1)" stroke="#3498db" stroke-width="0.55"/>
+<line x1="225.0" y1="262.0" x2="250.625" y2="262.0" stroke="#3498db" stroke-width="0.15" stroke-dasharray="2 1"/>
+<line x1="225.0" y1="265.0" x2="250.625" y2="265.0" stroke="#3498db" stroke-width="0.15" stroke-dasharray="2 1"/>
+<line x1="225.0" y1="268.0" x2="250.625" y2="268.0" stroke="#3498db" stroke-width="0.15" stroke-dasharray="2 1"/>
+<line x1="225.0" y1="271.0" x2="250.625" y2="271.0" stroke="#3498db" stroke-width="0.15" stroke-dasharray="2 1"/>
+<line x1="225.0" y1="274.0" x2="250.625" y2="274.0" stroke="#3498db" stroke-width="0.15" stroke-dasharray="2 1"/>
+<text x="238.0625" y="269.0" font-family="Arial" font-size="2.8" text-anchor="middle" fill="#2980b9" font-weight="bold">PARKING</text>
+<text x="238.0625" y="271.5" font-family="Arial" font-size="2.2" text-anchor="middle" fill="#2980b9">90 spaces · 2250 m2</text>
+<rect x="256.125" y="260.5" width="7.5" height="10.6625" fill="rgba(155,89,182,0.12)" stroke="#8e44ad" stroke-width="0.6"/>
+<rect x="256.125" y="260.5" width="7.5" height="5.33125" fill="none" stroke="#8e44ad" stroke-width="0.15" stroke-dasharray="2 1"/>
+<text x="259.875" y="265.5" font-family="Arial" font-size="2.6" text-anchor="middle" fill="#7d3c98" font-weight="bold">OFFICES + WELFARE</text>
+<text x="259.875" y="269.0" font-family="Arial" font-size="2.0" text-anchor="middle" fill="#7d3c98">2-Storey · 320 m2</text>
+<rect x="224.0" y="285.5" width="40.0" height="6.0" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="244.0" y="287.4" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-002</text>
+<text x="244.0" y="289.3" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">STEEL + PRECAST</text>
+<text x="244.0" y="291.0" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">960 m2</text>
+<rect x="351.5" y="285.5" width="55.0" height="6.0" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="379.0" y="287.4" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-003</text>
+<text x="379.0" y="289.3" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">CLADDING+ROOFING</text>
+<text x="379.0" y="291.0" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">1320 m2</text>
+<rect x="271.5" y="304.0" width="70.0" height="5.5" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="306.5" y="305.65" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-004</text>
+<text x="306.5" y="307.55" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">FLOOR+CONTAINMENT</text>
+<text x="306.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">1540 m2</text>
+<rect x="286.5" y="304.0" width="40.0" height="6.0" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="306.5" y="305.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-005</text>
+<text x="306.5" y="307.8" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">PIPE WELDING + CRAH</text>
+<text x="306.5" y="309.5" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">960 m2</text>
+<rect x="326.5" y="304.0" width="35.0" height="6.0" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="344.0" y="305.9" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-006</text>
+<text x="344.0" y="307.8" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">XFMR+GEN STAGING</text>
+<text x="344.0" y="309.5" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">840 m2</text>
+<rect x="401.5" y="285.5" width="25.0" height="6.0" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="414.0" y="287.4" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-007</text>
+<text x="414.0" y="289.3" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">ELV+BMS KIT</text>
+<text x="414.0" y="291.0" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">600 m2</text>
+<rect x="224.0" y="304.0" width="15.0" height="5.5" fill="#e74c3c" fill-opacity="0.16" stroke="#e74c3c" stroke-width="0.55" rx="1.5"/>
+<text x="231.5" y="305.65" font-family="Arial" font-size="2.3" text-anchor="middle" fill="#e74c3c" font-weight="bold">TP-008</text>
+<text x="231.5" y="307.55" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#e74c3c">EXT. MATS</text>
+<text x="231.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#e74c3c">330 m2</text>
+<rect x="230.5" y="296.0" width="207.0" height="1.5" fill="none" stroke="#e74c3c" stroke-width="0.4" stroke-dasharray="3 2"/>
+<text x="331.5" y="295.1" font-family="Arial" font-size="1.9" text-anchor="middle" fill="#e74c3c">3.0m MAST-CLIMBER CLEARANCE (PDC-LOG-001 §7)</text>
+<circle cx="293.5" cy="303.5" r="17.5" fill="none" stroke="#e74c3c" stroke-width="0.55" stroke-dasharray="4 2 1 2"/>
+<circle cx="293.5" cy="303.5" r="1.4" fill="rgba(231,76,60,0.35)" stroke="#e74c3c" stroke-width="0.35"/>
+<text x="293.5" y="298.5" font-family="Arial" font-size="2.1" text-anchor="middle" fill="#e74c3c" font-weight="bold">250t CRANE (DH2 roof)</text>
+<text x="293.5" y="300.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#e74c3c">R=35m +10% exclusion</text>
+<circle cx="338.5" cy="303.5" r="17.5" fill="none" stroke="#e74c3c" stroke-width="0.55" stroke-dasharray="4 2 1 2"/>
+<circle cx="338.5" cy="303.5" r="1.4" fill="rgba(231,76,60,0.35)" stroke="#e74c3c" stroke-width="0.35"/>
+<text x="338.5" y="298.5" font-family="Arial" font-size="2.1" text-anchor="middle" fill="#e74c3c" font-weight="bold">250t CRANE (DH3 roof)</text>
+<text x="338.5" y="300.5" font-family="Arial" font-size="1.6" text-anchor="middle" fill="#e74c3c">R=35m +10% exclusion</text>
+<circle cx="326.5" cy="267.0" r="11.0" fill="none" stroke="#f39c12" stroke-width="0.45" stroke-dasharray="3 2"/>
+<circle cx="326.5" cy="267.0" r="1.0" fill="rgba(243,156,18,0.4)" stroke="#f39c12" stroke-width="0.2"/>
+<text x="326.5" y="275.0" font-family="Arial" font-size="1.8" text-anchor="middle" fill="#f39c12">GEN LIFT CRANE · 8 units</text>
+<rect x="246.0" y="310.0" width="5.0" height="2.0" fill="#2c3e50" fill-opacity="0.35" stroke="#2c3e50" stroke-width="0.35" rx="1"/>
+<text x="248.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#2c3e50" font-weight="bold">LP-1</text>
+<text x="248.5" y="311.25" font-family="Arial" font-size="1.4" text-anchor="middle" fill="#2c3e50">HARDSTANDING</text>
+<rect x="291.0" y="310.0" width="5.0" height="2.0" fill="#2c3e50" fill-opacity="0.35" stroke="#2c3e50" stroke-width="0.35" rx="1"/>
+<text x="293.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#2c3e50" font-weight="bold">LP-2</text>
+<text x="293.5" y="311.25" font-family="Arial" font-size="1.4" text-anchor="middle" fill="#2c3e50">HARDSTANDING</text>
+<rect x="336.0" y="310.0" width="5.0" height="2.0" fill="#2c3e50" fill-opacity="0.35" stroke="#2c3e50" stroke-width="0.35" rx="1"/>
+<text x="338.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#2c3e50" font-weight="bold">LP-3</text>
+<text x="338.5" y="311.25" font-family="Arial" font-size="1.4" text-anchor="middle" fill="#2c3e50">HARDSTANDING</text>
+<rect x="381.0" y="310.0" width="5.0" height="2.0" fill="#2c3e50" fill-opacity="0.35" stroke="#2c3e50" stroke-width="0.35" rx="1"/>
+<text x="383.5" y="309.25" font-family="Arial" font-size="1.7" text-anchor="middle" fill="#2c3e50" font-weight="bold">LP-4</text>
+<text x="383.5" y="311.25" font-family="Arial" font-size="1.4" text-anchor="middle" fill="#2c3e50">HARDSTANDING</text>
+<rect x="222.5" y="280.75" width="105.0" height="26.7" fill="rgba(255,255,255,0.85)" stroke="#c0392b" stroke-width="0.3" rx="2"/>
+<text x="224.0" y="282.0" font-family="Arial" font-size="2.3" fill="#c0392b" font-weight="bold">ISSUES:</text>
+<text x="225.5" y="283.9" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs Data Hall 2</text>
+<text x="225.5" y="285.8" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs Data Hall 3</text>
+<text x="225.5" y="287.7" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs Data Hall 2</text>
+<text x="225.5" y="289.6" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs Data Hall 3</text>
+<text x="225.5" y="291.5" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs TP</text>
+<text x="225.5" y="293.4" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs Data Hall 3</text>
+<text x="225.5" y="295.3" font-family="Arial" font-size="2.0" fill="#c0392b">! OVERLAP: TP vs TP</text>
+<rect x="321.5" y="257.0" width="107.5" height="3.5" fill="#000" fill-opacity="0.85" rx="2"/>
+<text x="324.0" y="259.25" font-family="Arial" font-size="3.5" fill="#fff" font-weight="bold">MONTH 10: DEC 2026</text>
+<text x="413.0" y="259.25" font-family="Arial" font-size="2.5" fill="#aaa" text-anchor="end">210 ops · 28 staff</text>
+<rect x="416.5" y="256.25" width="13.0" height="1.75" fill="#e74c3c" rx="1.5"/>
+<text x="423.0" y="257.5" font-family="Arial" font-size="2.0" text-anchor="middle" fill="#fff" font-weight="bold">HIGH</text>
+<text x="324.0" y="263.0" font-family="Arial" font-size="2.0" fill="#555">External: 2570 m2 / 48,300 m2 (5.3%) · 0 packages active</text>
+<rect x="386.5" y="311.5" width="45.0" height="5.0" fill="none" stroke="#000" stroke-width="0.4" rx="1"/>
+<text x="389.0" y="313.0" font-family="Arial" font-size="2.0" fill="#000" font-weight="bold">PDC-LOG-002-M10</text>
+<text x="389.0" y="314.5" font-family="Arial" font-size="1.6" fill="#555">SCALE 1:2000  ·  Nordbuild Oy</text>
+<text x="389.0" y="315.75" font-family="Arial" font-size="1.5" fill="#a00">SYNTHETIC DATA — NOT A REAL PROJECT</text>
+<line x1="224.0" y1="311.5" x2="274.0" y2="311.5" stroke="#000" stroke-width="1.8"/>
+<text x="249.0" y="312.25" font-family="Arial" font-size="2.2" text-anchor="middle" fill="#000">200m</text>
+<polygon points="425.5,259.0 423.5,261.5 425.5,260.5 427.5,261.5" fill="#000"/>
+<text x="425.5" y="258.5" font-family="Arial" font-size="2.8" text-anchor="middle" fill="#000" font-weight="bold">N</text>
+</svg>

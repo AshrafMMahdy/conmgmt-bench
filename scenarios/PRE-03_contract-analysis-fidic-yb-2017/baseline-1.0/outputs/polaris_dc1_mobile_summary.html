@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris DC-1 · Rev C Final</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.5; padding: 0 0 32px 0; -webkit-tap-highlight-color: transparent; }
+.header { background: #1a1a2e; color: #fff; padding: 20px 16px 16px; }
+.header h1 { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+.header .sub { font-size: 0.78rem; opacity: 0.75; }
+.header .kpis { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.kpi { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; flex: 1; min-width: 70px; text-align: center; }
+.kpi .val { font-size: 1.05rem; font-weight: 700; }
+.kpi .lbl { font-size: 0.65rem; opacity: 0.7; margin-top: 2px; }
+
+.card { background: #fff; margin: 10px 10px 0; border-radius: 10px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.card h2 { font-size: 0.95rem; margin-bottom: 8px; color: #1a1a2e; cursor: pointer; user-select: none; -webkit-user-select: none; display: flex; align-items: center; gap: 6px; }
+.card h2::after { content: " ▾"; font-size: 0.65rem; margin-left: auto; }
+.card h2.open::after { content: " ▴"; }
+
+.collapse-body { display: none; }
+.collapse-body.open { display: block; }
+
+.item { padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.82rem; display: flex; gap: 8px; align-items: flex-start; }
+.item:last-child { border-bottom: none; }
+.chip { font-size: 0.62rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+.chip-green { background: #27ae60; color: #fff; }
+.chip-blue { background: #2980b9; color: #fff; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 4px 0; }
+td, th { padding: 6px 4px; border-bottom: 1px solid #eee; text-align: left; }
+th { color: #888; font-weight: 500; font-size: 0.7rem; }
+.good { color: #27ae60; font-weight: 600; }
+
+.summary-box { background: #eafaf1; border-radius: 8px; padding: 12px; margin: 10px 0; font-size: 0.85rem; }
+.summary-box strong { color: #1e8449; }
+
+.footer { text-align: center; font-size: 0.65rem; color: #999; padding: 14px; }
+</style>
+</head>
+<body>
+<script>/* chat bridge */function sendPrompt(t){try{parent.postMessage({type:'send-prompt',text:String(t||'')},'*');}catch(e){}}window.sendPrompt=sendPrompt;</script>
+
+<div class="header">
+  <h1>Polaris DC-1 · Rev C — Ready to Sign</h1>
+  <div class="sub">FIDIC Yellow Book 2017 · 24 February 2026 · Finland Chamber of Commerce Arbitration · Helsinki</div>
+  <div class="kpis">
+    <div class="kpi"><div class="val">€92.4M</div><div class="lbl">Contract Sum</div></div>
+    <div class="kpi"><div class="val">10%</div><div class="lbl">Advance Payment</div></div>
+    <div class="kpi"><div class="val">5%</div><div class="lbl">Retention</div></div>
+    <div class="kpi"><div class="val">10%</div><div class="lbl">LD Cap</div></div>
+    <div class="kpi"><div class="val">28d</div><div class="lbl">Claims Notice</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="collapse open">🔴 The Three Critical Items — Resolved</h2>
+  <div class="collapse-body open">
+    <div class="item"><span class="chip chip-green">FIXED</span><span><strong>Liability cap restored</strong> — Capped at €92.4M. Excluded: death/personal injury, fraud, wilful misconduct, abandonment, insurance proceeds. Standard FIDIC position.</span></div>
+    <div class="item"><span class="chip chip-green">FIXED</span><span><strong>ER errors back on Employer</strong> — Sub-Clause 1.9 reinstated in full. The 350+ pages of Employer's Requirements and Tenant Technical Annex are the Employer's risk now.</span></div>
+    <div class="item"><span class="chip chip-green">FIXED</span><span><strong>Performance warranty now reasonable skill &amp; care</strong> — "Professional designer" standard restored. PUE ≤1.25 / WUE ≤0.25 / 99.982% availability / 4MWth waste heat targets remain as guarantees, but you now have a professional-standard defence.</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="collapse">🟠 Contract Mechanics — What We Got</h2>
+  <div class="collapse-body">
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>Concurrent delay bar deleted</strong> — Engineer must apportion delay between causes fairly. You get EOT for Employer-risk share. No cost for concurrent periods.</span></div>
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>28-day claims notice · full FIDIC process</strong> — Sub-Clauses 20.2.1 and 20.2.2 restored. Engineer must notify you of non-compliance. No absolute time bar.</span></div>
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>No more Employer deduction for anticipated LDs</strong> — Deduction limited to actually-accrued, agreed/determined Delay Damages only.</span></div>
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>Ground risk fully restored</strong> — Sub-Clause 4.12 reinstated in full including cost. Time + money for unforeseen conditions.</span></div>
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>Exceptional Events fully restored</strong> — Sub-Clause 18.1 back in full. Weather, strikes, all standard events covered.</span></div>
+    <div class="item"><span class="chip chip-green">WON</span><span><strong>Variation interim valuation</strong> — If price not agreed within 28 days, Engineer must interim-valuate and certify.</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="collapse">🟢 The Commercial Terms</h2>
+  <div class="collapse-body">
+    <table>
+      <tr><th>Item</th><th>Rev A</th><th>Rev B</th><th>Rev C</th></tr>
+      <tr><td>Advance payment</td><td>None</td><td>5%</td><td class="good">10%</td></tr>
+      <tr><td>Retention rate</td><td>10%</td><td>7.5%</td><td class="good">5%</td></tr>
+      <tr><td>Retention release</td><td>All at PC (36mo)</td><td>Half at S4 TOC</td><td class="good">Half at S1 TOC, rest at S4</td></tr>
+      <tr><td>Bond substitution</td><td>No</td><td>From S1 TOC</td><td class="good">From Day 1</td></tr>
+      <tr><td>LD cap</td><td>20%</td><td>12%</td><td class="good">10%</td></tr>
+      <tr><td>DNP</td><td>36 mo</td><td>24 mo</td><td class="good">24 mo</td></tr>
+      <tr><td>Liability cap</td><td>None</td><td>None</td><td class="good">€92.4M</td></tr>
+      <tr><td>ER errors</td><td>Contractor</td><td>Contractor</td><td class="good">Employer (1.9 restored)</td></tr>
+      <tr><td>Design warranty</td><td>Absolute</td><td>Absolute</td><td class="good">Reasonable skill &amp; care</td></tr>
+      <tr><td>Claims notice</td><td>14d (absolute bar)</td><td>21d (absolute bar)</td><td class="good">28d (FIDIC standard)</td></tr>
+      <tr><td>Ground risk</td><td>Deleted</td><td>Time only</td><td class="good">Full 4.12 (time + cost)</td></tr>
+      <tr><td>Concurrent delay</td><td>Bar (all ours)</td><td>Bar (all ours)</td><td class="good">Apportionment</td></tr>
+      <tr><td>Cost adjustment</td><td>None</td><td>3 commodities, 5% franchise</td><td class="good">+labour, 2% franchise</td></tr>
+      <tr><td>Arbitration</td><td>LCIA London</td><td>FCC Helsinki</td><td class="good">FCC Helsinki</td></tr>
+      <tr><td>Subcontractor payment</td><td>60d pay-when-paid</td><td>45d</td><td class="good">30d</td></tr>
+      <tr><td>Exceptional Events</td><td>Narrow list</td><td>+1-in-25yr weather</td><td class="good">Full 18.1 restored</td></tr>
+      <tr><td>Employer IPC deduction</td><td>None</td><td>Anticipated LDs</td><td class="good">Actual LDs only</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <h2>✅ The One Thing We Accepted</h2>
+  <div class="item"><span class="chip chip-blue">ACCEPTED</span><span><strong>No DAAB</strong> — Sub-Clauses 21.1–21.4 remain deleted. Disputes go straight to Finland Chamber of Commerce arbitration, Helsinki, English, 3 arbitrators. Short 22-month programme; a standing board would be disproportionate. Our contracts in Finland have historically gone straight to FCC arbitration without a board. Knowingly accepted risk.</span></div>
+</div>
+
+<div class="summary-box">
+  <strong>Recommendation: Sign.</strong> Three rounds of negotiation. All three red-line items addressed. All six Tier 1+2 items accepted. Nine of ten asks landed. Six unasked-for concessions gained. The sole gap (no DAAB) is consciously accepted. This contract is now aligned with our historical database on every material commercial metric.
+</div>
+
+<div class="card">
+  <h2>📊 Key Metrics — Rev C vs Our Database</h2>
+  <table>
+    <tr><th>Metric</th><th>Rev C</th><th>Our Normal</th><th>Match?</th></tr>
+    <tr><td>Liability cap</td><td>€92.4M</td><td>100% of contract sum</td><td class="good">✓</td></tr>
+    <tr><td>Advance payment</td><td>10%</td><td>5-10%</td><td class="good">✓</td></tr>
+    <tr><td>Retention</td><td>5%, bond option, half at S1</td><td>5%→2.5% at PC, bond allowed</td><td class="good">✓</td></tr>
+    <tr><td>LD cap</td><td>10%</td><td>10%</td><td class="good">✓</td></tr>
+    <tr><td>Design warranty</td><td>RSC + performance targets</td><td>Reasonable skill & care</td><td class="good">✓</td></tr>
+    <tr><td>Ground conditions</td><td>Full 4.12</td><td>Employer bears unforeseeable</td><td class="good">✓</td></tr>
+    <tr><td>ER errors</td><td>Employer (1.9)</td><td>Employer warrants accuracy</td><td class="good">✓</td></tr>
+    <tr><td>Claims notice</td><td>28d, full 20.2.2 process</td><td>28 days</td><td class="good">✓</td></tr>
+    <tr><td>DNP</td><td>24 months</td><td>24 months</td><td class="good">✓</td></tr>
+    <tr><td>Arbitration</td><td>FCC Helsinki</td><td>FAI Helsinki or local courts</td><td class="good">✓</td></tr>
+  </table>
+</div>
+
+<div class="footer">Rev A 12 Jan → Rev B 6 Feb → Rev C 24 Feb 2026 · All three critical risks now resolved · © Polaris DC-1 Commercial</div>
+
+<script>
+(function(){
+  var hs = document.querySelectorAll('.card h2.collapse');
+  for (var i = 0; i < hs.length; i++) {
+    (function(h){
+      h.addEventListener('click', function(e){
+        e.preventDefault();
+        h.classList.toggle('open');
+        var b = h.nextElementSibling;
+        if (b) b.classList.toggle('open');
+      });
+    })(hs[i]);
+  }
+})();
+</script>
+</body>
+</html>

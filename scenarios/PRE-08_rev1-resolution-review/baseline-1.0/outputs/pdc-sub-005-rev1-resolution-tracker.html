@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDC-SUB-005 Rev 1 — Resolution Tracker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#f4f5f7;color:#1a1a2e;padding:24px;max-width:1100px;margin:0 auto}
+h1{font-size:1.4rem;margin-bottom:4px}
+.verdict{display:inline-block;background:#188038;color:#fff;padding:6px 16px;border-radius:6px;font-weight:700;font-size:.95rem;margin-bottom:8px}
+.subtitle{color:#555;font-size:.85rem;margin-bottom:20px}
+.stats{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.stat-card{background:#fff;border-radius:8px;padding:12px 18px;min-width:100px;box-shadow:0 1px 3px rgba(0,0,0,.08);text-align:center}
+.stat-card .num{font-size:1.8rem;font-weight:700}
+.stat-card .label{font-size:.68rem;color:#666;text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
+.stat-card.resolved .num{color:#188038}
+.stat-card.substance .num{color:#e37400}
+.stat-card.mitigated .num{color:#1a73e8}
+.issue-row{background:#fff;border-radius:8px;padding:14px 16px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);display:grid;grid-template-columns:40px 1fr 140px 1fr 120px;gap:12px;align-items:start;font-size:.82rem}
+.issue-row.header{background:transparent;box-shadow:none;font-weight:600;font-size:.72rem;text-transform:uppercase;color:#888;padding:6px 16px;margin-bottom:2px}
+.issue-row .id{font-weight:700;font-size:.85rem}
+.issue-row .issue-name{font-weight:600;line-height:1.3}
+.issue-row .old{color:#888;font-size:.75rem;line-height:1.3}
+.issue-row .new{font-size:.78rem;line-height:1.3;color:#1a3a6b}
+.issue-row .status{font-weight:600;font-size:.78rem}
+.status-resolved{color:#188038}
+.status-substance{color:#e37400}
+.status-mitigated{color:#1a73e8}
+.status-acceptable{color:#555}
+.section-title{font-weight:700;font-size:.9rem;margin:20px 0 10px;padding-bottom:4px;border-bottom:1px solid #ddd}
+.new-items{background:#fff;border-radius:8px;padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.new-item{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.82rem;line-height:1.4}
+.new-item:last-child{border-bottom:none}
+.new-item .ni-sev{font-size:.65rem;font-weight:600;text-transform:uppercase;padding:1px 6px;border-radius:3px;margin-right:6px}
+.ni-low{background:#fef7e0;color:#e37400}
+.ni-info{background:#e8f0fe;color:#1a73e8}
+.summary-box{background:#fff;border-radius:8px;padding:18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:.85rem;line-height:1.6}
+@media(max-width:720px){.issue-row{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<script>/* chat bridge */function sendPrompt(t){try{parent.postMessage({type:'send-prompt',text:String(t||'')},'*');}catch(e){}}window.sendPrompt=sendPrompt;</script>
+<h1>PDC-SUB-005 Rev 1 — Ilmatek TP-005 Mechanical</h1>
+<div style="margin-bottom:4px"><span class="verdict">✅ SAFE TO SIGN</span></div>
+<p class="subtitle">Resolution Review · 3 August 2026 · EUR 22,286,880</p>
+
+<div class="summary-box">
+Ilmatek has addressed every material issue from the Rev 0 review. <strong>14 of 17 issues fully resolved</strong>, including all 4 CRITICAL blockers and all 8 HIGH items. The form-of-subcontract issue (C5) is resolved in substance through a comprehensive flow-down clause that makes the subcontract functionally back-to-back. <strong>No new material risks.</strong> Two LOW-severity advisory notes are flagged.
+</div>
+
+<div class="stats">
+<div class="stat-card resolved"><div class="num">14</div><div class="label">RESOLVED</div></div>
+<div class="stat-card substance"><div class="num">1</div><div class="label">IN SUBSTANCE</div></div>
+<div class="stat-card mitigated"><div class="num">1</div><div class="label">MITIGATED</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">ALREADY OK</div></div>
+<div class="stat-card"><div class="num" style="color:#d93025">0</div><div class="label">UNRESOLVED</div></div>
+</div>
+
+<div class="section-title">CRITICAL (5 → 0 unresolved)</div>
+<div class="issue-row header"><span>#</span><span>Issue</span><span>Rev 0</span><span>Rev 1</span><span>Status</span></div>
+<div class="issue-row"><span class="id">C1</span><span class="issue-name">Governing law: Sweden → Finland</span><span class="old">Swedish law</span><span class="new">The law of Finland ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">C2</span><span class="issue-name">Dispute resolution: SCC/Stockholm/1 → FCC/Helsinki/3</span><span class="old">SCC Rules, Stockholm, 1 arbitrator</span><span class="new">FCC Rules, Helsinki, 3 arbitrators + joinder consent ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">C3</span><span class="issue-name">Concurrent delay: full EOT → apportionment</span><span class="old">Full EOT for whole concurrency period</span><span class="new">Apportionment; no Cost for concurrent period ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">C4</span><span class="issue-name">Variation suspension: delete, proceed-first</span><span class="old">Suspend if value not agreed in 14 days</span><span class="new">Proceed immediately; interim valuation at 28 days ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">C5</span><span class="issue-name">Form: own conditions → YSE 1998 as tendered</span><span class="old">Subcontractor's standard conditions</span><span class="new">Standard conditions AS AMENDED + Clause 1.3 flow-down ✎</span><span class="status status-substance">◐ IN SUBSTANCE</span></div>
+
+<div class="section-title">HIGH (8 → 0 unresolved)</div>
+<div class="issue-row header"><span>#</span><span>Issue</span><span>Rev 0</span><span>Rev 1</span><span>Status</span></div>
+<div class="issue-row"><span class="id">H1</span><span class="issue-name">Sectional completion + per-section LDs</span><span class="old">Single date, no sectional</span><span class="new">4 sectional dates, per-section EUR 15K/day ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H2</span><span class="issue-name">Cap LDs at 10% of Subcontract Sum</span><span class="old">No aggregate limit</span><span class="new">10% of Subcontract Sum ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H3</span><span class="issue-name">Retention: 10% → 5%, release at Section 1</span><span class="old">10%, full at completion</span><span class="new">5%, half at Section 1, remainder at Section 4 ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H4</span><span class="issue-name">DLP: 12 months → 24 months</span><span class="old">12 months from completion</span><span class="new">24 months from Taking Over of Section ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H5</span><span class="issue-name">PI insurance: EUR 2M/3yr → EUR 10M/6yr</span><span class="old">EUR 2M, 3 years</span><span class="new">EUR 10M, 6 years from Section 4 ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H6</span><span class="issue-name">Liability cap: 50% → 100%</span><span class="old">50% of Subcontract Sum</span><span class="new">Subcontract Sum (100%), expanded carve-outs ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H7</span><span class="issue-name">Performance security: 5% → 10%</span><span class="old">5%</span><span class="new">10%, on-demand bank guarantee ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">H8</span><span class="issue-name">Design obligation: + guaranteed outcomes</span><span class="old">Skill and care only</span><span class="new">Performance guarantee backed by 5% security ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+
+<div class="section-title">MEDIUM (4 → 0 unresolved)</div>
+<div class="issue-row header"><span>#</span><span>Issue</span><span>Rev 0</span><span>Rev 1</span><span>Status</span></div>
+<div class="issue-row"><span class="id">M1</span><span class="issue-name">Payment: 60 days → 45 days as tendered</span><span class="old">60 days from receipt</span><span class="new">45 days from certification, not conditional ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">M2</span><span class="issue-name">Late payment interest: 8% → ECB+2%</span><span class="old">8% per annum flat</span><span class="new">2% above ECB refinancing rate ✎</span><span class="status status-resolved">✅ RESOLVED</span></div>
+<div class="issue-row"><span class="id">M3</span><span class="issue-name">Commencement: floating → fixed date</span><span class="old">10 WD floating</span><span class="new">10 WD floating, bounded by fixed sectional dates</span><span class="status status-mitigated">◐ MITIGATED</span></div>
+<div class="issue-row"><span class="id">M4</span><span class="issue-name">Advance payment: 10%/12%</span><span class="old">10%/12% — acceptable</span><span class="new">Unchanged</span><span class="status status-acceptable">✅ ACCEPTABLE</span></div>
+
+<div class="section-title">NEW ITEMS (2 LOW · 9 INFO)</div>
+<div class="new-items">
+<div class="new-item"><span class="ni-sev ni-low">LOW</span> <strong>N1 · 21-day EOT notice time bar (Clause 4.3)</strong> — Subcontract: 21 days vs Main: 28 days. Tighter to allow upstream pass-through. Brief your commercial team: notice on day 22 = dead.</div>
+<div class="new-item"><span class="ni-sev ni-low">LOW</span> <strong>N2 · Performance guarantee security 5% (Clause 10.1)</strong> — Additional 5% on top of 10% perf security = 20% total until tests pass. Tendered at 5% in IL-7729 §5 — disclosed and priced.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N3 · General flow-down (Clause 1.3)</strong> — Co-extensive rights; pay-when-recovered for claims. FAVORABLE.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N4 · Joinder to Employer arbitration (Clause 13.2)</strong> — Eliminates parallel-proceedings risk. FAVORABLE.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N5 · Deduction right for LDs (Clause 5.4)</strong> — Contractor may deduct from any amount due. FAVORABLE.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N6 · Anti-pay-if-paid for monthly payments (Clause 6.1)</strong> — Monthly payments not conditional on Employer receipt. FAVORABLE.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N7 · Errors in ER pass-through (Clause 2.4)</strong> — Sub bears ER error risk on same terms as main. NEUTRAL/BACK-TO-BACK.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N8 · Unforeseeable conditions pass-through (Clause 9.4)</strong> — Same relief as Contractor, subject to flow-down. NEUTRAL.</div>
+<div class="new-item"><span class="ni-sev ni-info">INFO</span> <strong>N9 · 1233/2006 compliance (Clause 11.2)</strong> — Quarterly evidence. Mirrors SP-4(f). NEUTRAL.</div>
+</div>
+</body>
+</html>

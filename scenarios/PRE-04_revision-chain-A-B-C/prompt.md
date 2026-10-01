@@ -1,0 +1,3 @@
+> Continues the PRE-03 conversation. Rev B and Rev C are both already in the project folder; the user mentions only Rev B.
+
+The Employer has come back with Rev B of the Particular Conditions. They just sent the document — no covering note, nothing telling us what they actually changed. Can you compare Rev A against Rev B, and reference the analysis you already did, so we can see what actually moved, what they have left alone, and anything else. Finish with a clear summary for me: how do you recommend we proceed — do we sign this, or go back for another revision? If another revision, be specific about exactly what we are asking them for.

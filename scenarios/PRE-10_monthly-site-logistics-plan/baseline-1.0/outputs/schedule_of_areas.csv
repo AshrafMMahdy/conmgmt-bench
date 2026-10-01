@@ -1,0 +1,136 @@
+Month,Zone Type,Zone Name,Area (m2),Occupier/Function,Start Month,End Month,Notes
+Mar 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Mar 2026,Jun 2027,Expands monthly with headcount. 6 visitor spaces outside gate.
+Mar 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Mar 2026,Jun 2027,2-storey modular. Expands with staff count.
+Mar 2026,Storage,TP-008 Fencing & Ducting Compound,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,Early phase: temporary fencing, ducting, gate materials near SW.
+Mar 2026,Storage,TP-001 Stockpile + Compound,2400,Kallio & Maa Oy (TP-001),Mar 2026,Oct 2026,Eastern half of site. Grows to 4200 m2 by May 2026. Stockpile + offices + piling rig.
+Mar 2026,Route,Vehicle Spine (6.0m 2-way),-,Nordbuild,Mar 2026,Jun 2027,Gate to E-W distributor loop. Fixed for project duration.
+Mar 2026,Route,E-W Distributor (6.0m 2-way),-,Nordbuild,Mar 2026,Jun 2027,Distributor at Y=55-63m across full width.
+Mar 2026,Route,Pedestrian Route (2.0m),-,Nordbuild,Mar 2026,Jun 2027,Segregated northern edge. 3 crossings.
+Mar 2026,Lifting,Material Lifting Points (LP-1 to LP-4),-,All Packages,Mar 2026,Jun 2027,Four hardstanding lift points south of each data hall.
+
+Apr 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Apr 2026,Jun 2027,
+Apr 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Apr 2026,Jun 2027,
+Apr 2026,Storage,TP-001 Stockpile + Compound,3500,Kallio & Maa Oy (TP-001),Mar 2026,Oct 2026,Growing stockpile. Bulk excavation in full swing.
+Apr 2026,Storage,TP-002 Steel Prep Compound,300,Terasrakenne Pohjola Oy (TP-002),Apr 2026,Feb 2027,Mobilising. Prep area for steel delivery scheduling.
+Apr 2026,Storage,TP-005 Mechanical Mobilisation,200,Ilmatek LVI Oy (TP-005),Apr 2026,Oct 2027,Mobilising. Early pipe and equipment staging.
+Apr 2026,Storage,TP-006 Electrical Mobilisation,200,Voima Electric Oy (TP-006),Apr 2026,Oct 2027,Mobilising. Early cable drum and switchgear staging.
+Apr 2026,Storage,TP-008 Fencing & Ducting Compound,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+May 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,May 2026,Jun 2027,
+May 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,May 2026,Jun 2027,
+May 2026,Storage,TP-001 Stockpile (PEAK),4200,Kallio & Maa Oy (TP-001),May 2026,May 2026,PEAK STOCKPILE. 18-22 lorry movements/day through single gate. Blasting in eastern third.
+May 2026,Storage,TP-002 Steel Prep Compound,300,Terasrakenne Pohjola Oy (TP-002),Apr 2026,Feb 2027,
+May 2026,Storage,TP-005 Mechanical Mobilisation,200,Ilmatek LVI Oy (TP-005),Apr 2026,Oct 2027,
+May 2026,Storage,TP-006 Electrical Mobilisation,200,Voima Electric Oy (TP-006),Apr 2026,Oct 2027,
+May 2026,Storage,TP-008 Fencing & Ducting Compound,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Jun 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Jun 2026,Jun 2027,
+Jun 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Jun 2026,Jun 2027,
+Jun 2026,Storage,TP-001 Stockpile + Piling,4000,Kallio & Maa Oy (TP-001),Jun 2026,Jun 2026,DH1 piling begins Jun 14. Piling rig 25x15m. Stockpile beginning to draw down.
+Jun 2026,Storage,TP-002 Steel Prep Compound,400,Terasrakenne Pohjola Oy (TP-002),Apr 2026,Feb 2027,
+Jun 2026,Storage,TP-005 Mech Prep,200,Ilmatek LVI Oy (TP-005),Apr 2026,Oct 2027,
+Jun 2026,Storage,TP-006 Elec Prep,200,Voima Electric Oy (TP-006),Apr 2026,Oct 2027,
+Jun 2026,Storage,TP-008 Fencing & Ducting,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Jul 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Jul 2026,Jun 2027,
+Jul 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Jul 2026,Jun 2027,
+Jul 2026,Storage,TP-001 Stockpile + Piling,3500,Kallio & Maa Oy (TP-001),Jul 2026,Jul 2026,DH2 piling Jul 5. Substation/Gatehouse construction.
+Jul 2026,Storage,TP-002 Steel Laydown,600,Terasrakenne Pohjola Oy (TP-002),Jul 2026,Feb 2027,Steel arriving JIT. 18m trailers need through route.
+Jul 2026,Storage,TP-005 Pipe Staging,200,Ilmatek LVI Oy (TP-005),Apr 2026,Oct 2027,
+Jul 2026,Storage,TP-006 Cable Drums,200,Voima Electric Oy (TP-006),Apr 2026,Oct 2027,
+Jul 2026,Storage,TP-008 Fencing & Ducting,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Aug 2026,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Aug 2026,Jun 2027,
+Aug 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Aug 2026,Jun 2027,
+Aug 2026,Storage,TP-001 Stockpile + Piling,3000,Kallio & Maa Oy (TP-001),Aug 2026,Aug 2026,DH3-DH4 piling. Slabs starting. Earthworks winding down.
+Aug 2026,Storage,TP-002 Steel Laydown,900,Terasrakenne Pohjola Oy (TP-002),Aug 2026,Aug 2026,PEAK STEEL LAYDOWN. 250t mobile crane mobilising. 110kV DNO permission required.
+Aug 2026,Storage,TP-003 Envelope Mobilisation,400,Julkisivu Vantaa Oy (TP-003),Aug 2026,Apr 2027,Arrives Aug 3. Drained hardstanding for cassettes.
+Aug 2026,Storage,TP-005 Pipe Staging,300,Ilmatek LVI Oy (TP-005),Apr 2026,Oct 2027,
+Aug 2026,Storage,TP-006 Cable Drums + SWGR,300,Voima Electric Oy (TP-006),Apr 2026,Oct 2027,
+Aug 2026,Storage,TP-008 Fencing & Ducting,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Sep 2026,Parking,Staff & Operative Parking,1450,Nordbuild / All Packages,Sep 2026,Jun 2027,100 operatives now on site.
+Sep 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Sep 2026,Jun 2027,
+Sep 2026,Storage,TP-001 Residual Stockpile,2000,Kallio & Maa Oy (TP-001),Sep 2026,Sep 2026,Stockpile drawing down. DH1 GF slab cast Sep 29.
+Sep 2026,Storage,TP-002 Steel + Precast Laydown,900,Terasrakenne Pohjola Oy (TP-002),Sep 2026,Sep 2026,DH2 GF steel erection Sep 23. 250t crane working.
+Sep 2026,Storage,TP-003 Cladding Cassettes,800,Julkisivu Vantaa Oy (TP-003),Aug 2026,Apr 2027,Cladding materials in hall-sized batches.
+Sep 2026,Storage,TP-005 Pipe + Equipment Staging,600,Ilmatek LVI Oy (TP-005),Sep 2026,Mar 2027,Chiller installation DH1 Sep 29. 2 welding gangs.
+Sep 2026,Storage,TP-006 Cable Drums + SWGR,400,Voima Electric Oy (TP-006),Sep 2026,Oct 2027,Transformer manufacturing in progress.
+Sep 2026,Storage,TP-008 Fencing & Ducting,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Oct 2026,Parking,Staff & Operative Parking,1700,Nordbuild / All Packages,Oct 2026,Jun 2027,155 operatives.
+Oct 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Oct 2026,Jun 2027,
+Oct 2026,Storage,TP-001 Residual Stockpile,1000,Kallio & Maa Oy (TP-001),Oct 2026,Oct 2026,Final draw-down. Demobilisation begins. Space released for other compounds.
+Oct 2026,Storage,TP-002 Steel + Precast Laydown,900,Terasrakenne Pohjola Oy (TP-002),Oct 2026,Oct 2026,DH3-DH4 GF steel. DH1-DH2 upper steel.
+Oct 2026,Storage,TP-003 Cladding + Roofing,1100,Julkisivu Vantaa Oy (TP-003),Oct 2026,Feb 2027,PEAK ENVELOPE. Mast-climbers active. 3.0m clearance strip required both long elevations.
+Oct 2026,Storage,TP-004 Raised Floor Pallets,400,Sisarak. Helsinki Oy (TP-004),Oct 2026,Oct 2026,Arrives Nov 2 but early mobilisation. External storage needed until weathertight.
+Oct 2026,Storage,TP-005 Pipe Welding + CRAH,800,Ilmatek LVI Oy (TP-005),Oct 2026,Mar 2027,Moved to south strip. Pipe welding + CRAH staging.
+Oct 2026,Storage,TP-006 XFMR + Gen Staging,600,Voima Electric Oy (TP-006),Oct 2026,Feb 2027,Transformer and generator delivery Nov. Crane lifts for 8 generators.
+Oct 2026,Storage,TP-008 Fencing & Ducting,400,Ulkoalue Uusimaa Oy (TP-008),Mar 2026,Nov 2026,
+
+Nov 2026,Parking,Staff & Operative Parking,1950,Nordbuild / All Packages,Nov 2026,Jun 2027,180 operatives. Gate approaching high utilisation.
+Nov 2026,Welfare,Offices + Canteen + Changing,300,Nordbuild,Nov 2026,Jun 2027,
+Nov 2026,Storage,TP-002 Steel + Precast Laydown,900,Terasrakenne Pohjola Oy (TP-002),Nov 2026,Nov 2026,DH1-DH4 upper floor and roof steel. Peak steel activity.
+Nov 2026,Storage,TP-003 Cladding + Roofing,1100,Julkisivu Vantaa Oy (TP-003),Nov 2026,Nov 2026,DH2 cladding starts Nov 16. Roof waterproofing DH2 Nov 23.
+Nov 2026,Storage,TP-004 Raised Floor + Containment,1200,Sisarak. Helsinki Oy (TP-004),Nov 2026,Jan 2027,EXTERNAL STORAGE GROWING. All four halls still open - weathertight not yet achieved.
+Nov 2026,Storage,TP-005 Pipe Welding + CRAH,800,Ilmatek LVI Oy (TP-005),Nov 2026,Mar 2027,
+Nov 2026,Storage,TP-006 XFMR + Gen Staging,800,Voima Electric Oy (TP-006),Nov 2026,Feb 2027,Transformer/MV switchgear install Nov 8. Generator install Nov 15.
+Nov 2026,Storage,TP-008 External Mats,400,Ulkoalue Uusimaa Oy (TP-008),Nov 2026,Feb 2027,
+
+Dec 2026,Parking,Staff & Operative Parking,2250,Nordbuild / All Packages,Dec 2026,Jun 2027,210 operatives.
+Dec 2026,Welfare,Offices + Canteen + Changing,320,Nordbuild,Dec 2026,Jun 2027,
+Dec 2026,Storage,TP-002 Steel + Precast Laydown,900,Terasrakenne Pohjola Oy (TP-002),Dec 2026,Dec 2026,Upper steel all halls. Precast plank floors.
+Dec 2026,Storage,TP-003 Cladding + Roofing,1100,Julkisivu Vantaa Oy (TP-003),Dec 2026,Dec 2026,DH1 cladding Dec 31. Roofs progressing.
+Dec 2026,Storage,TP-004 Raised Floor + Containment,1600,Sisarak. Helsinki Oy (TP-004),Dec 2026,Dec 2026,PEAK EXTERNAL TP-004. 1600 m2 outside. THIS IS THE LARGEST RELEASE OF EXTERNAL SPACE when weathertight achieved.
+Dec 2026,Storage,TP-005 Pipe Welding + CRAH,800,Ilmatek LVI Oy (TP-005),Dec 2026,Mar 2027,
+Dec 2026,Storage,TP-006 Dist Boards + Busway,800,Voima Electric Oy (TP-006),Dec 2026,Feb 2027,
+Dec 2026,Storage,TP-007 ELV + BMS Kit,200,Tietoverkko Systems Oy (TP-007),Dec 2026,Oct 2027,Arrives Dec 1. Segregated cylinder compound also required.
+Dec 2026,Storage,TP-008 External Mats,400,Ulkoalue Uusimaa Oy (TP-008),Dec 2026,Feb 2027,
+
+Jan 2027,Parking,Staff & Operative Parking,2450,Nordbuild / All Packages,Jan 2027,Jun 2027,230 operatives - near peak.
+Jan 2027,Welfare,Offices + Canteen + Changing,334,Nordbuild,Jan 2027,Jun 2027,
+Jan 2027,Storage,TP-002 Steel + Precast,600,Terasrakenne Pohjola Oy (TP-002),Jan 2027,Feb 2027,Steel winding down. DH4 last hall finishing.
+Jan 2027,Storage,TP-003 Cladding + Roofing,1100,Julkisivu Vantaa Oy (TP-003),Jan 2027,Jan 2027,DH3-DH4 cladding. All roofs waterproofing.
+Jan 2027,Storage,TP-004 Moving Indoors,1400,Sisarak. Helsinki Oy (TP-004),Jan 2027,Jan 2027,Beginning to move inside as halls reach weathertight (EN-1500/1510).
+Jan 2027,Storage,TP-005 CRAH + Pipe Install,900,Ilmatek LVI Oy (TP-005),Jan 2027,Mar 2027,PEAK MECHANICAL. DH2 CRAH fan-wall Jan 11. 2 rigging gangs + 2 welding gangs.
+Jan 2027,Storage,TP-006 Dist Boards + Busway,900,Voima Electric Oy (TP-006),Jan 2027,Feb 2027,PEAK ELECTRICAL. DH2 cable trays, busway, dist boards. DH1 starting.
+Jan 2027,Storage,TP-007 ELV + BMS Containment,400,Tietoverkko Systems Oy (TP-007),Jan 2027,May 2027,ELV/BMS containment plus segregated cylinder compound (bunded, signed, separated from hot works).
+Jan 2027,Storage,TP-008 External Mats,400,Ulkoalue Uusimaa Oy (TP-008),Jan 2027,Feb 2027,
+
+Feb 2027,Parking,Staff & Operative Parking,2650,Nordbuild / All Packages,Feb 2027,Jun 2027,PEAK 250 operatives + 28 staff. 106 parking spaces.
+Feb 2027,Welfare,Offices + Canteen + Changing,347,Nordbuild,Feb 2027,Jun 2027,PEAK WELFARE. 2-storey modular. 200m max walking distance to working face.
+Feb 2027,Storage,TP-002 Steel Residual,300,Terasrakenne Pohjola Oy (TP-002),Feb 2027,Feb 2027,DEMOBILISING Feb 26. 250t crane demob releases hardstanding.
+Feb 2027,Storage,TP-003 Cladding + Roofing,800,Julkisivu Vantaa Oy (TP-003),Feb 2027,Apr 2027,Cladding substantially complete. DH4 finishing.
+Feb 2027,Storage,TP-004 Moving Indoors,800,Sisarak. Helsinki Oy (TP-004),Feb 2027,Mar 2027,Significant release of external space as materials move inside.
+Feb 2027,Storage,TP-005 CRAH + Pipe Install,900,Ilmatek LVI Oy (TP-005),Feb 2027,Mar 2027,DH1 CRAH install Feb 25. DH2 commissioning starts.
+Feb 2027,Storage,TP-006 Dist Boards + Busway,900,Voima Electric Oy (TP-006),Feb 2027,Feb 2027,All four halls electrical distribution active.
+Feb 2027,Storage,TP-007 ELV + BMS + Cylinders,400,Tietoverkko Systems Oy (TP-007),Feb 2027,May 2027,Segregated cylinder compound active. Pressurised cylinders - bunded, signed, separated.
+
+Mar 2027,Parking,Staff & Operative Parking,2500,Nordbuild / All Packages,Mar 2027,Jun 2027,
+Mar 2027,Welfare,Offices + Canteen + Changing,327,Nordbuild,Mar 2027,Jun 2027,
+Mar 2027,Storage,TP-003 Residual Envelope,400,Julkisivu Vantaa Oy (TP-003),Mar 2027,Apr 2027,Winding down. Snagging and final cassettes.
+Mar 2027,Storage,TP-004 Residual External,300,Sisarak. Helsinki Oy (TP-004),Mar 2027,Mar 2027,Minimal external storage. All materials moved inside weathertight halls.
+Mar 2027,Storage,TP-005 CRAH + Pipe,800,Ilmatek LVI Oy (TP-005),Mar 2027,Mar 2027,DH2-DH3 CRAH active. Commissioning starting.
+Mar 2027,Storage,TP-006 Dist Boards,800,Voima Electric Oy (TP-006),Mar 2027,Apr 2027,DH1-DH4 electrical testing and dead bus. Generator load-bank test.
+Mar 2027,Storage,TP-007 ELV + BMS,400,Tietoverkko Systems Oy (TP-007),Mar 2027,May 2027,ELV/BMS active all halls. Fire alarm integration testing begins.
+Mar 2027,Storage,TP-008 Paving + Planting (Late Phase),600,Ulkoalue Uusimaa Oy (TP-008),Mar 2027,Jun 2027,RELOCATION: Late phase compound on parking ground. Parking/offices move east.
+
+Apr 2027,Parking,Staff & Operative Parking,2150,Nordbuild / All Packages,Apr 2027,Jun 2027,Reducing as commissioning completes.
+Apr 2027,Welfare,Offices + Canteen + Changing,300,Nordbuild,Apr 2027,Jun 2027,
+Apr 2027,Storage,TP-003 Final Envelope,200,Julkisivu Vantaa Oy (TP-003),Apr 2027,Apr 2027,Demobilising Apr 15.
+Apr 2027,Storage,TP-004 Residual External,100,Sisarak. Helsinki Oy (TP-004),Apr 2027,Jun 2027,
+Apr 2027,Storage,TP-005 Commissioning Kit,400,Ilmatek LVI Oy (TP-005),Apr 2027,Oct 2027,S2 completion Apr 12. DH1-S1 completion Jun 3. Shrinking compound.
+Apr 2027,Storage,TP-006 Commissioning,400,Voima Electric Oy (TP-006),Apr 2027,Oct 2027,S2 completion Apr 12.
+Apr 2027,Storage,TP-007 Commissioning,400,Tietoverkko Systems Oy (TP-007),Apr 2027,May 2027,BMS/BAS integration functional tests. Fire alarm integration.
+Apr 2027,Storage,TP-008 Paving + Planting (Late Phase),800,Ulkoalue Uusimaa Oy (TP-008),Apr 2027,Jun 2027,PEAK EXTERNAL WORKS. Permanent roads, parking, landscaping.
+
+May 2027,Parking,Staff & Operative Parking,1650,Nordbuild / All Packages,May 2027,Jun 2027,
+May 2027,Welfare,Offices + Canteen + Changing,300,Nordbuild,May 2027,Jun 2027,
+May 2027,Storage,TP-005 Commissioning,200,Ilmatek LVI Oy (TP-005),May 2027,Oct 2027,S1 completion Jun 3. S3 completion Jun 3. District heating 72hr test.
+May 2027,Storage,TP-006 Commissioning,200,Voima Electric Oy (TP-006),May 2027,Oct 2027,
+May 2027,Storage,TP-007 Commissioning,200,Tietoverkko Systems Oy (TP-007),May 2027,Oct 2027,
+May 2027,Storage,TP-008 Paving + Planting,800,Ulkoalue Uusimaa Oy (TP-008),May 2027,Jun 2027,
+
+Jun 2027,Parking,Staff & Operative Parking,1200,Nordbuild / All Packages,Jun 2027,Jun 2027,
+Jun 2027,Welfare,Offices + Canteen + Changing,300,Nordbuild,Jun 2027,Jun 2027,
+Jun 2027,Storage,TP-008 Paving + Planting (Final),600,Ulkoalue Uusimaa Oy (TP-008),Jun 2027,Jun 2027,PROJECT COMPLETION Jun 10. Demobilisation.

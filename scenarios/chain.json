@@ -1,0 +1,181 @@
+{
+  "note": "Run in this order. inputs_added_before = copy scenarios/<folder>/inputs/* into project/ before starting it. builds_on = earlier deliverables the baseline had in the project.",
+  "order": [
+    {
+      "id": "PRE-01",
+      "folder": "PRE-01_baseline-programme",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-02",
+      "folder": "PRE-02_productivity-rates",
+      "builds_on": [
+        "PRE-01"
+      ],
+      "same_conversation_as": "PRE-01",
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-03",
+      "folder": "PRE-03_contract-analysis-fidic-yb-2017",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-04",
+      "folder": "PRE-04_revision-chain-A-B-C",
+      "builds_on": [
+        "PRE-03"
+      ],
+      "same_conversation_as": "PRE-03",
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-05",
+      "folder": "PRE-05_TP-005-mechanical-bid-levelling",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-06",
+      "folder": "PRE-06_TP-006-electrical-levelling-and-award",
+      "builds_on": [
+        "PRE-05"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-07",
+      "folder": "PRE-07_subcontract-drafting-and-gap-analysis",
+      "builds_on": [
+        "PRE-05",
+        "PRE-03"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "PRE-08",
+      "folder": "PRE-08_rev1-resolution-review",
+      "builds_on": [
+        "PRE-07"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "PRE-08b",
+      "folder": "PRE-08b_TP-005-baseline-programme-compliance",
+      "builds_on": [
+        "PRE-01",
+        "PRE-07"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "PRE-09",
+      "folder": "PRE-09_working-from-drawings-scale-and-quantities",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-10",
+      "folder": "PRE-10_monthly-site-logistics-plan",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-11",
+      "folder": "PRE-11_board-pack-four-deliverables",
+      "builds_on": [
+        "PRE-01",
+        "PRE-04",
+        "PRE-08"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "PRE-12",
+      "folder": "PRE-12_grading-the-board-pack-and-correcting-it",
+      "builds_on": [
+        "PRE-11"
+      ],
+      "same_conversation_as": "PRE-11",
+      "inputs_added_before": false
+    },
+    {
+      "id": "S1",
+      "folder": "S1_P05-monthly-progress-reconciliation",
+      "builds_on": [
+        "PRE-01"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S2",
+      "folder": "S2_P06-trend-across-two-periods",
+      "builds_on": [
+        "S1"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S3",
+      "folder": "S3_P07-the-detection-test",
+      "builds_on": [
+        "S2"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S4",
+      "folder": "S4_P08-ilmatek-EOT-claim-we-assess",
+      "builds_on": [
+        "S3",
+        "PRE-08"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S5",
+      "folder": "S5_P09-our-110kV-EOT-claim-to-the-employer",
+      "builds_on": [
+        "S4"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S6",
+      "folder": "S6_P10-valuing-an-instructed-variation",
+      "builds_on": [
+        "S5"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    },
+    {
+      "id": "S7",
+      "folder": "S7_P11-the-engineer-determines-we-answer",
+      "builds_on": [
+        "S5",
+        "S6"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": true
+    }
+  ]
+}

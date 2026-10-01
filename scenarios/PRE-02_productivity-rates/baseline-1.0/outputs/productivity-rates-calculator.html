@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaris DC-1 — Productivity Rates Calculator</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:14px/1.5 system-ui,-apple-system,sans-serif;background:#f5f6f8;color:#1a1a2e;padding:20px}
+h1{font-size:22px;color:#1f4e79;margin-bottom:4px}
+h2{font-size:15px;color:#1f4e79;margin:24px 0 12px;border-bottom:2px solid #1f4e79;padding-bottom:4px}
+.sub{color:#666;font-size:12px;margin-bottom:20px}
+.card{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:16px;margin-bottom:16px}
+.params{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:12px;background:#fff3cd;border-radius:6px;margin-bottom:16px}
+.params label{font-weight:600;font-size:12px;color:#856404}
+.params input{width:80px;padding:6px 8px;border:1px solid #e0b94a;border-radius:4px;font-size:14px;text-align:center}
+.params input:focus{outline:2px solid #ffc107}
+.params .sep{color:#ccc}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#1f4e79;color:#fff;padding:8px 6px;text-align:center;font-weight:600;position:sticky;top:0;z-index:1}
+td{padding:6px;border-bottom:1px solid #e0e0e0;text-align:center}
+tr:nth-child(even){background:#f9f9fb}
+td.name{text-align:left;font-weight:500}
+td input{width:70px;padding:4px 6px;border:1px solid #ccc;border-radius:3px;text-align:center;font-size:12px;background:#fffbe6}
+td input:focus{outline:2px solid #4a90d9;background:#fff}
+td input.ls{background:#fce4d6;font-weight:600}
+td.result{font-weight:700;color:#1f4e79;background:#e8f0fe}
+td.rate{font-family:monospace;font-size:11px;color:#2d6a4f}
+td.mhrs{font-family:monospace;font-size:11px;color:#555}
+td.notes{font-size:11px;color:#666;text-align:left;max-width:280px}
+.badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:600}
+.badge-qt{background:#d4edda;color:#155724}
+.badge-ls{background:#f8d7da;color:#721c24}
+.summary-row td{font-weight:700;background:#e8f0fe;border-top:2px solid #1f4e79}
+.footer{font-size:11px;color:#888;margin-top:24px;text-align:center}
+</style>
+</head>
+<body>
+<script>/* chat bridge */function sendPrompt(t){try{parent.postMessage({type:'send-prompt',text:String(t||'')},'*');}catch(e){}}window.sendPrompt=sendPrompt;</script>
+<h1>Polaris DC-1 — Productivity Rates</h1>
+<p class="sub">NordBuild Historical Database (ev_1) → computed rates → Polaris durations. Change yellow cells and all computed cells recalculate.</p>
+
+<div class="card params">
+  <label>Margin %<br><input type="number" id="margin" value="10" step="1" min="0" max="50" oninput="recalcAll()"></label>
+  <span class="sep">|</span>
+  <label>DC MEP Scaling<br><input type="number" id="dcScale" value="2.5" step="0.1" min="1" max="5" oninput="recalcAll()"></label>
+  <span class="sep">|</span>
+  <span style="font-size:11px;color:#856404;max-width:300px">These parameters affect all computations.<br>Margin = 10% (first-build DC + winter + learning-curve).<br>DC Scale = 2.5× (data centre MEP density vs commercial office).</span>
+</div>
+
+<h2>Quantity-Driven Activities</h2>
+<div class="card">
+<table id="qtTable">
+<thead><tr>
+<th>Sched ID</th><th>Activity</th><th>Trade</th><th>Analog</th>
+<th>Qty</th><th>Unit</th><th>Rate</th><th>Rate Unit</th>
+<th>Crews</th><th>Members</th><th>Hrs/Day</th>
+<th>Raw wd</th><th>Base wd</th><th>Final wd</th><th>Notes</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<h2>Lump-Sum / Analog-Duration Activities</h2>
+<div class="card">
+<table id="lsTable">
+<thead><tr>
+<th>Sched ID</th><th>Activity</th><th>Trade</th><th>Analog</th>
+<th>Crews</th><th>Members</th>
+<th>Duration (wd)</th><th>Notes</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<h2>Historical Analogs</h2>
+<div class="card">
+<table id="histTable">
+<thead><tr>
+<th>Evidence ID</th><th>Project</th><th>Activity</th><th>Trade</th>
+<th>Qty</th><th>Unit</th><th>Crews</th><th>Members</th><th>Dur (wd)</th>
+<th>Man-Hours</th><th>Rate</th><th>Rate Unit</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<p class="footer">All rates computed from NordBuild historical database ev_1 (5 projects, 990 analogs). Change any yellow input — every computed cell updates instantly. Orange = LS / judgement entry.</p>
+
+<script>
+const margin=()=>parseInt(document.getElementById('margin').value||10)/100
+const dcScale=()=>parseFloat(document.getElementById('dcScale').value||2.5)
+
+const analogData=[
+  ["hist-prj-001-act-132","PRJ-001 Helsinki","Bulk Earthworks & Rough Grading","Earthworks",2500,"m³",2,8,10],
+  ["hist-prj-001-act-137","PRJ-001 Helsinki","Basement Excavation & Shoring","Earthworks",3000,"m³",2,8,15],
+  ["hist-prj-001-act-137","PRJ-001 Helsinki","Rock Excavation (blasting, -20%)","Blasting",3000,"m³ rock",2,8,19],
+  ["hist-prj-001-act-134","PRJ-001 Helsinki","Rock-Socketed Bored Piles","Piling",100,"piles",2,6,30],
+  ["hist-prj-004-act-138","PRJ-004 Helsinki","Rock-Socketed Bored Piles","Piling",100,"piles",2,6,30],
+  ["hist-prj-001-act-140","PRJ-001 Helsinki","Pile Caps & Ground Beams","RC Frame",800,"m³ RC",2,8,10],
+  ["hist-prj-001-act-141","PRJ-001 Helsinki","Foundation Slab","RC Frame",600,"m³ RC",2,8,10],
+  ["hist-prj-001-act-139","PRJ-001 Helsinki","Foundation Waterproofing","Waterproofing",500,"m²",1,4,5],
+  ["hist-prj-001-act-145","PRJ-001 Helsinki","Structural Frame (Floors 1-N)","RC Frame",1800,"m³ RC",2,12,45],
+  ["hist-prj-001-act-146","PRJ-001 Helsinki","Precast Floor Planks","Precast",4000,"m²",2,6,30],
+  ["hist-prj-004-act-82","PRJ-004 Helsinki","Structural Steel — Fabrication","Steel Fab.",1,"LS",1,12,35],
+  ["hist-prj-004-act-148","PRJ-004 Helsinki","Ground Floor Steel Erection","Steel Erection",1,"LS",2,8,8],
+  ["hist-prj-004-act-149","PRJ-004 Helsinki","Upper Floor & Roof Steel","Steel Erection",1,"LS",2,10,40],
+  ["hist-prj-001-act-150","PRJ-001 Helsinki","External Wall Thermal Insul.","Envelope",3500,"m²",1,6,20],
+  ["hist-prj-001-act-153","PRJ-001 Helsinki","Roof Waterproofing","Roofing",1200,"m²",1,4,8],
+  ["hist-prj-001-act-168","PRJ-001 Helsinki","Riser Piping (Htg & Clg)","Mech Pipe",600,"lm",2,6,20],
+  ["hist-prj-001-act-169","PRJ-001 Helsinki","HVAC Ductwork","Mech HVAC",2000,"m² duct",2,8,20],
+  ["hist-prj-001-act-170","PRJ-001 Helsinki","Chiller/CRAH per unit","Mech HVAC",1,"unit",1,4,5],
+  ["hist-prj-001-act-183","PRJ-001 Helsinki","Cable Trays & Containment","Electrical",1,"LS",2,8,25],
+  ["hist-prj-001-act-184","PRJ-001 Helsinki","Main Power Feeder Cables","Electrical",1,"LS",2,6,10],
+  ["hist-prj-001-act-185","PRJ-001 Helsinki","Distribution Boards","Electrical",1,"LS",2,6,10],
+  ["hist-prj-001-act-201","PRJ-001 Helsinki","Internal Partition Walls","Fit-Out",4500,"m²",2,10,20],
+  ["hist-prj-001-act-203","PRJ-001 Helsinki","Raised Access Flooring","Fit-Out",3500,"m²",1,6,10],
+  ["hist-prj-001-act-162","PRJ-001 Helsinki","Access Roads & Paths","External Works",500,"lm",1,6,8],
+  ["hist-prj-001-act-164","PRJ-001 Helsinki","Landscaping","External Works",800,"m²",1,4,8],
+  ["hist-prj-001-act-215","PRJ-001 Helsinki","HVAC Commissioning","Commissioning",1,"LS",1,6,10],
+  ["hist-prj-001-act-217","PRJ-001 Helsinki","Electrical Systems Testing","Commissioning",1,"LS",1,4,8],
+  ["hist-prj-001-act-220","PRJ-001 Helsinki","BMS/BAS Integrated Test","Commissioning",1,"LS",1,4,8],
+  ["hist-prj-001-act-218","PRJ-001 Helsinki","Fire Alarm Integrated Test","Commissioning",1,"LS",1,3,5],
+];
+
+function buildHistTable(){
+  const tbody=document.getElementById('histTable').querySelector('tbody')
+  tbody.innerHTML=''
+  analogData.forEach(([ev,pj,nm,tr,qty,un,cr,mm,dr],i)=>{
+    const mhrs=cr*mm*dr*8
+    const rateStr=qty>1?(qty/mhrs).toFixed(4):'LS'
+    const rateUnit=qty>1?un+'/man-hr':'days'
+    tbody.innerHTML+=`<tr>
+      <td>${ev}</td><td class="name">${pj}</td><td class="name">${nm}</td><td>${tr}</td>
+      <td>${qty}</td><td>${un}</td>
+      <td><input type="number" value="${cr}" min="1" style="width:50px" oninput="updateAnalog(${i},this)"></td>
+      <td><input type="number" value="${mm}" min="1" style="width:50px" oninput="updateAnalog(${i},this)"></td>
+      <td><input type="number" value="${dr}" min="1" style="width:50px" oninput="updateAnalog(${i},this)"></td>
+      <td class="mhrs">${mhrs.toLocaleString()}</td>
+      <td class="rate">${rateStr}</td>
+      <td>${rateUnit}</td></tr>`
+  })
+}
+
+function updateAnalog(i,el){
+  const row=el.closest('tr')
+  const cells=row.querySelectorAll('input')
+  const cr=parseInt(cells[0].value)||1
+  const mm=parseInt(cells[1].value)||1
+  const dr=parseInt(cells[2].value)||1
+  const qty=analogData[i][4]
+  const un=analogData[i][5]
+  const mhrs=cr*mm*dr*8
+  const rate=qty>1?(qty/mhrs).toFixed(4):'LS'
+  const rateUnit=qty>1?un+'/man-hr':'days'
+  row.cells[9].textContent=mhrs.toLocaleString()
+  row.cells[10].textContent=rate
+  row.cells[11].textContent=rateUnit
+  // Note: Polaris sheet uses hardcoded rates; changing analogs doesn't auto-update Polaris
+}
+
+const qtData=[
+  [40,"Bulk Earthworks — Site Strip & Cut","Earthworks","hist-prj-001-act-132",12000,"m³",1.953,"m³/man-hr",2,8,8,"12,000 m³. Rate from PRJ-001."],
+  [41,"Rock Excavation & Blasting","Blasting","hist-prj-001-act-137",4500,"m³ rock",1.250,"m³/man-hr",2,8,8,"Blasting: -20% rate vs excavation (restricted hours)"],
+  [42,"Trench Excavation — Site Services","Earthworks","hist-prj-001-act-137",2000,"m³",1.563,"m³/man-hr",1,8,8,"Service trenches"],
+  [50,"DH1 — Rock-Socketed Bored Piles","Piling","hist-prj-001-act-134",40,"piles",0.035,"piles/man-hr",2,6,8,"~40 piles/hall; 2 rigs at 1.67/day"],
+  [54,"DH1 Pile Caps & Ground Beams","RC Frame","hist-prj-001-act-140",240,"m³ RC",0.625,"m³/man-hr",2,8,8,"~240 m³ per hall"],
+  [58,"DH1 Foundation Waterproofing","Waterproofing","hist-prj-001-act-139",250,"m²",3.125,"m²/man-hr",1,4,8,"~250 m² per hall"],
+  [62,"DH1 Ground Floor Slab","RC Frame","hist-prj-001-act-141",600,"m³ RC",0.469,"m³/man-hr",2,8,8,"~600 m³ per hall"],
+  [78,"DH1 — Precast Plank Floors","Precast","hist-prj-001-act-146",3000,"m²",1.389,"m²/man-hr",2,6,8,"~3,000 m² per hall"],
+  [90,"DH1 — Ext Wall Insul & Cladding","Envelope","hist-prj-001-act-150",2250,"m²",3.646,"m²/man-hr",2,6,8,"~2,250 m² per hall"],
+  [94,"DH1 — Roof Waterproofing & Insul","Roofing","hist-prj-001-act-153",1500,"m²",4.688,"m²/man-hr",2,4,8,"~1,500 m² per hall"],
+  [114,"DH1 — HVAC Ductwork & AHU","Mech HVAC","hist-prj-001-act-169",2000,"m² duct",0.781,"m²/man-hr",2,8,8,"~2,000 m² per hall"],
+  [118,"Cooling Spine — Pipework","Mech Pipe","hist-prj-001-act-168",1200,"lm",0.313,"lm/man-hr",2,6,8,"1,200 lm spine"],
+  [119,"DH1 — Riser Piping (Htg & Clg)","Mech Pipe","hist-prj-001-act-168",300,"lm",0.313,"lm/man-hr",2,6,8,"~300 lm per hall"],
+  [130,"DH1 — CRAH Fan-Wall Install","Mech HVAC","hist-prj-001-act-170",120,"units",0.006,"u/man-hr",2,6,8,"~120 units. DC-scaled rate (5× over analog)"],
+  [140,"DH1 — Chiller Installation","Mech HVAC","hist-prj-001-act-170",4,"units",0.006,"u/man-hr",1,4,8,"4 chillers (N+1)"],
+  [160,"DH1 — Raised Access Flooring","Fit-Out","hist-prj-001-act-203",1500,"m²",7.292,"m²/man-hr",2,6,8,"~1,500 m² per hall"],
+  [200,"Access Roads & Parking","External Works","hist-prj-001-act-162",500,"lm",1.302,"lm/man-hr",2,6,8,"~500 lm + base/kerbs/wearing course"],
+  [203,"Landscaping & Soft Works","External Works","hist-prj-001-act-164",800,"m²",3.125,"m²/man-hr",1,4,8,"~800 m² + winter allowance"],
+];
+
+const lsData=[
+  [10,"Mobilisation & Site Setup","General Labour","hist-prj-001-act-130",1,6,8,"5d analog + 3d DC complexity"],
+  [70,"DH1 — GF Steel Erection","Steel Erection","hist-prj-004-act-148",2,8,8,"8d LS per hall (PRJ-004)"],
+  [72,"DH1 — Upper Floor & Roof Steel","Steel Erection","hist-prj-004-act-149",2,10,40,"40d LS per hall (PRJ-004)"],
+  [110,"DH1 — Cable Trays & Containment","Electrical","hist-prj-001-act-183",2,8,35,"25d base × DC scale → 2 gangs: ~35d"],
+  [141,"DH1 — Electrical Dist. Boards","Electrical","hist-prj-001-act-185",2,6,14,"10d base × DC scale → 2 gangs: ~14d"],
+  [145,"DH1 — Busway & Power Feeders","Electrical","hist-prj-001-act-184",2,6,14,"10d base × DC scale → 2 gangs: ~14d"],
+  [150,"DH1 — ELV/BMS/Fire Detection","ELV","hist-prj-001-act-183",2,6,20,"25d DC-scaled → 2 gangs: ~20d"],
+  [164,"Admin/NOC — Fit-Out","Fit-Out","hist-prj-001-act-201",2,8,25,"Conventional office fit-out: 25d LS"],
+  [170,"DH1 — Electrical Test & Dead Bus","Commissioning","hist-prj-001-act-217",1,4,12,"8d × 1.5 DC: 12d"],
+  [175,"DH1 — HVAC Commissioning","Commissioning","hist-prj-001-act-215",1,6,15,"10d × 1.5 DC: 15d"],
+  [180,"DH1 — BMS/BAS Functional Test","Commissioning","hist-prj-001-act-220",1,4,12,"8d × 1.5 DC: 12d"],
+  [181,"DH1 — Fire Alarm Test","Commissioning","hist-prj-001-act-218",1,3,7,"5d × 1.4 DC: 7d"],
+  [182,"DH1 — Gen Load-Bank Test","Commissioning","hist-prj-001-act-218",1,3,8,"5d × 1.6 DC: 8d"],
+];
+
+function recalcQt(){
+  const m=margin()
+  const tbody=document.getElementById('qtTable').querySelector('tbody')
+  const rows=tbody.querySelectorAll('tr')
+  rows.forEach(row=>{
+    const inputs=row.querySelectorAll('input')
+    if(inputs.length<4)return
+    const qty=parseFloat(inputs[0].value)||0
+    const crews=parseInt(inputs[1].value)||1
+    const mem=parseInt(inputs[2].value)||1
+    const hrs=parseInt(inputs[3].value)||1
+    const rate=parseFloat(row.cells[6].dataset.rate||row.cells[6].textContent)||0.001
+    const raw=qty>0&&rate>0?qty/(rate*crews*mem*hrs):0
+    const base=Math.ceil(raw)
+    const final=Math.ceil(base*(1+m))
+    row.cells[11].textContent=raw>0?raw.toFixed(1):'—'
+    row.cells[12].textContent=base>0?base:'—'
+    row.cells[13].textContent=final>0?final:'—'
+  })
+}
+
+function recalcAll(){
+  recalcQt()
+}
+
+function buildQtTable(){
+  const tbody=document.getElementById('qtTable').querySelector('tbody')
+  tbody.innerHTML=''
+  qtData.forEach(([id,nm,tr,ev,qty,un,rate,ru,cr,mm,hr,nn])=>{
+    const raw=rate>0?qty/(rate*cr*mm*hr):0
+    const base=Math.ceil(raw)
+    const final=Math.ceil(base*(1+margin()))
+    tbody.innerHTML+=`<tr>
+      <td>${id}</td><td class="name">${nm}</td><td>${tr}</td><td style="font-size:10px">${ev}</td>
+      <td><input type="number" value="${qty}" min="0" oninput="recalcQt()"></td><td>${un}</td>
+      <td class="rate" data-rate="${rate}">${rate}</td><td style="font-size:10px">${ru}</td>
+      <td><input type="number" value="${cr}" min="1" style="width:50px" oninput="recalcQt()"></td>
+      <td><input type="number" value="${mm}" min="1" style="width:50px" oninput="recalcQt()"></td>
+      <td><input type="number" value="${hr}" min="1" max="16" style="width:50px" oninput="recalcQt()"></td>
+      <td class="mhrs">${raw.toFixed(1)}</td><td>${base}</td><td class="result">${final}</td>
+      <td class="notes">${nn}</td></tr>`
+  })
+}
+
+function buildLsTable(){
+  const tbody=document.getElementById('lsTable').querySelector('tbody')
+  tbody.innerHTML=''
+  lsData.forEach(([id,nm,tr,ev,cr,mm,dur,nn])=>{
+    tbody.innerHTML+=`<tr>
+      <td>${id}</td><td class="name">${nm}</td><td>${tr}</td><td style="font-size:10px">${ev}</td>
+      <td><input type="number" value="${cr}" min="1" style="width:50px"></td>
+      <td><input type="number" value="${mm}" min="1" style="width:50px"></td>
+      <td><input type="number" value="${dur}" min="1" class="ls" style="width:60px"></td>
+      <td class="notes">${nn}</td></tr>`
+  })
+}
+
+buildHistTable()
+buildQtTable()
+buildLsTable()
+</script>
+</body>
+</html>

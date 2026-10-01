@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "ConMgmt-Bench: an open evaluation set for AI agents in construction project management"
+version: "1.0"
+date-released: "2026-10"
+license: CC-BY-4.0
+type: dataset
+authors:
+  - name: "The evaluation authors"
+repository-code: "<repository url>"
