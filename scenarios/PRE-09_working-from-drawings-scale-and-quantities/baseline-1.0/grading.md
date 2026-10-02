@@ -19,4 +19,4 @@ No key for this scenario.
 
 ## Deliverables
 
-drawing index and site-plan measurements (output to be republished).
+site-plan calibration and strip-volume report (MD).
