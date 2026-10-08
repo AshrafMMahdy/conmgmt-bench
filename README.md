@@ -2,7 +2,7 @@
 
 An open evaluation set for AI agents in construction project management — from tender to claim. Version 1.0.
 
-Twenty scenarios from one synthetic project (Polaris DC-1, a data-campus design-and-build in Finland), covering the work a general contractor's planning, commercial and claims teams actually do: baseline programme, productivity rates, contract analysis across three revisions, bid levelling and award, subcontract gap analysis, programme compliance, drawings, site logistics, a board pack, three month-ends of progress reporting, two claims argued in opposite directions, a variation valuation and a determination response.
+Twenty-two scenarios: twenty from one synthetic project (Polaris DC-1, a data-campus design-and-build in Finland), covering the work a general contractor's planning, commercial and claims teams actually do: baseline programme, productivity rates, contract analysis across three revisions, bid levelling and award, subcontract gap analysis, programme compliance, drawings, site logistics, a board pack, three month-ends of progress reporting, two claims argued in opposite directions, a variation valuation and a determination response; plus a pour-day truck-dispatch optimisation with a route markup on the site logistics plan (21) and a live Hilma public-tender watch run as an unattended scheduled task (22, needs a free Hilma API key).
 
 Each scenario is a prompt a construction professional would actually send, the documents they would have at that moment, outcome expectations, an answer key where one was written before the run, and **our own outputs as baseline 1.0** — what an acceptable answer looks like, not a ceiling.
 

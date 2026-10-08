@@ -1,0 +1,8 @@
+{
+  "baseline": "1.0",
+  "model": "DeepSeek V4 Flash",
+  "mode": "scheduled task, unattended, act-auto",
+  "same_conversation_as": null,
+  "run_date": "2026-10-07",
+  "tender_picked": "Hilma 2026-057797, Säterinpuistontie välillä Leppävaarankatu – Turuntie, Espoon kaupunki"
+}

@@ -176,6 +176,23 @@
       ],
       "same_conversation_as": null,
       "inputs_added_before": true
+    },
+    {
+      "id": "21",
+      "folder": "21_pour-day-truck-dispatch-and-route-markup",
+      "builds_on": [
+        "PRE-10"
+      ],
+      "same_conversation_as": null,
+      "inputs_added_before": false
+    },
+    {
+      "id": "22",
+      "folder": "22_hilma-tender-watch",
+      "builds_on": [],
+      "same_conversation_as": null,
+      "inputs_added_before": false,
+      "note": "standalone; live Hilma data; needs a Hilma API key (free, hankintailmoitukset.fi); run as an unattended scheduled task or one message"
     }
   ]
 }
