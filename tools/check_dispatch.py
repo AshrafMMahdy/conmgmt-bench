@@ -16,6 +16,7 @@ COLS = {"mixer": ("mixer", "truck", "vehicle"), "pour": ("pour", "element"), "lo
         "batched": ("batched", "batch", "batching", "loaded", "leaves plant", "depart"),
         "arrive": ("at pump", "arrive", "arrival", "on site", "at site"),
         "placed": ("discharged", "placed", "discharge end", "finished")}
+OPTIONAL = {"start": ("discharge start", "pour start", "start", "begin")}   # when given, the pump window and gaps use it; "at pump" is then the arrival
 
 def mins(s):
     m = re.search(r"(\d{1,2})[:.h](\d{2})", str(s))
@@ -43,22 +44,34 @@ def read_rows(path, sheet=None):
         if any(str(v).strip() for v in vals): rows.append(vals)
     return rows
 
-def parse(rows):
-    head = [str(h).strip().lower() for h in rows[0]]
+def match_header(row):
+    head = [str(h).strip().lower() for h in row]
     idx = {}
     for key, names in COLS.items():
         for i, h in enumerate(head):
             if any(h == n or h.startswith(n) or n in h for n in names) and i not in idx.values():
                 idx[key] = i; break
-    missing = [k for k in COLS if k not in idx]
-    if missing: raise SystemExit(f"columns not found: {missing}; header was {head}")
+    return head, idx
+
+def parse(rows):
+    # The header is the first row that names every column — a title row above it (common in delivered workbooks) is skipped.
+    hdr = next((k for k, r in enumerate(rows) if not [c for c in COLS if c not in match_header(r)[1]]), None)
+    if hdr is None:
+        head, idx = match_header(rows[0]); missing = [k for k in COLS if k not in idx]
+        raise SystemExit(f"columns not found: {missing}; header was {head}")
+    head, idx = match_header(rows[hdr])
+    for key, names in OPTIONAL.items():
+        for i, h in enumerate(head):
+            if any(h == n or h.startswith(n) or n in h for n in names) and i not in idx.values():
+                idx[key] = i; break
     out = []
-    for r in rows[1:]:
+    for r in rows[hdr + 1:]:
         try:
             pour = re.search(r"P\s*([123])", str(r[idx["pour"]]).upper())
             if not pour: continue
             out.append(dict(mixer=str(r[idx["mixer"]]).strip(), pour="P" + pour.group(1), load=int(re.search(r"\d+", str(r[idx["load"]])).group()),
-                            batched=mins(r[idx["batched"]]), arrive=mins(r[idx["arrive"]]), placed=mins(r[idx["placed"]])))
+                            batched=mins(r[idx["batched"]]), arrive=mins(r[idx["arrive"]]), placed=mins(r[idx["placed"]]),
+                            start=mins(r[idx["start"]]) if "start" in idx and str(r[idx["start"]]).strip() else mins(r[idx["arrive"]])))
         except Exception as e:
             print(f"skipped row {r!r}: {e}")
     return out
@@ -69,15 +82,17 @@ def check(loads):
         p = POURS[L["pour"]]
         if L["arrive"] - L["batched"] < LOAD + p["travel"]:
             v.append(f"{L['mixer']} {L['pour']} load {L['load']}: batched {hhmm(L['batched'])} but at pump {hhmm(L['arrive'])} — needs at least {LOAD + p['travel']} min (10 load + {p['travel']} drive)")
-        if L["placed"] - L["arrive"] < UNLOAD:
+        if L["start"] < L["arrive"]:
+            v.append(f"{L['mixer']} {L['pour']} load {L['load']}: discharge starts {hhmm(L['start'])} before arrival {hhmm(L['arrive'])}")
+        if L["placed"] - L["start"] < UNLOAD:
             v.append(f"{L['mixer']} {L['pour']} load {L['load']}: discharge shorter than {UNLOAD} min")
         if L["placed"] - L["batched"] > LIMIT:
             v.append(f"{L['mixer']} {L['pour']} load {L['load']}: placed {L['placed'] - L['batched']} min after batching (limit {LIMIT})")
-        if L["arrive"] < mins(p["ws"]) or L["placed"] > mins(p["we"]):
-            v.append(f"{L['mixer']} {L['pour']} load {L['load']}: at pump {hhmm(L['arrive'])}–{hhmm(L['placed'])}, window {p['ws']}–{p['we']}")
+        if L["start"] < mins(p["ws"]) or L["placed"] > mins(p["we"]):
+            v.append(f"{L['mixer']} {L['pour']} load {L['load']}: discharging {hhmm(L['start'])}–{hhmm(L['placed'])}, window {p['ws']}–{p['we']}")
     for pour, p in POURS.items():
         need = -(-p["vol"] // CAP)
-        got = sorted(L["arrive"] for L in loads if L["pour"] == pour)
+        got = sorted(L["start"] for L in loads if L["pour"] == pour)
         if len(got) != need: v.append(f"{pour}: {len(got)} loads delivered, {need} needed ({p['vol']} m3 at {CAP} m3)")
         for a, b in zip(got, got[1:]):
             if b - a > GAP: v.append(f"{pour}: {b - a} min between arrivals {hhmm(a)} and {hhmm(b)} (max {GAP})")
