@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Kick-off for Polaris DC-1 — I need the baseline programme.
 
 I'm the scheduling manager at NordBuild. We've won Polaris DC-1 (Aviapolis Data Campus Phase 1, Vantaa) and I need the baseline CPM programme we'll submit to the Engineer.
@@ -31,3 +25,5 @@ THE REST OF THE BRIEF:
 DELIVERABLES: the productivity-rates document; a Basis of Schedule (assumptions, calendars, the productivity basis and where it came from, sequencing logic, critical path narrative, risks, exclusions); the P6 XER, genuinely cost and resource loaded; and an Excel workbook with the histogram and the S-curve.
 
 Before you hand me anything, run the reviewer — and open your own exports to check they contain what you are claiming.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

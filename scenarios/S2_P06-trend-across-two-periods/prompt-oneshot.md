@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Morning — month end again on Polaris DC-1. Period 06, data date 31 August 2026.
 
 You did last month's properly so I'm not going to ask you to plan this one out for me first — just go ahead and build it. Last month's report, workbook and deck are in the project folder under 12 Progress Reports if you want the shape I liked. Work the same way you did then.
@@ -21,3 +15,5 @@ Second, same rule as last time: where our own records and a subcontractor's retu
 Third, and this one is new — I read last month's report closely. Every figure that goes into these documents has to be traceable to a document you have actually read. If you cannot cite where a number comes from, leave it out and say plainly that it is not available. I would much rather have a gap in the report than a number I cannot defend when the client asks me where it came from.
 
 Take the time you need on it.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

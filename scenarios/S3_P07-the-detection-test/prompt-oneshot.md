@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Morning. Period 07 on Polaris DC-1, data date 30 September 2026. Third cycle.
 
 I want to do this one differently — plan it out with me before you write anything. You've earned the run-it-yourself treatment and I'm not taking it back, but this particular report is a special case and I'd rather we agree the approach up front.
@@ -19,3 +13,5 @@ The rules we've settled into still stand. Where our records and a subcontractor'
 One more thing, and it's the reason I want a plan rather than a report. Don't just tell me what each party has told us. Tell me what their documents mean when you put them next to each other, and next to the last two months. That's the part I can't do quickly myself and it's the part the commercial team actually needs.
 
 Come back to me with how you'd approach it.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

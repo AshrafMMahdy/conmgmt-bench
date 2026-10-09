@@ -8,3 +8,5 @@ Outcome rules a good answer meets. Score each 0 / 0.5 / 1; see `scoring/HOW_TO_S
 4. Durations are derived, not asserted: quantities from the Bill, rates stated, crews stated; where a rate is a judgement it says so.
 5. Cost-loaded from the Bill of Quantities with the mapping shown; totals reconcile to the Bill.
 6. Deliverables that open in planning software and Excel (XER or equivalent, workbook) plus a Basis of Schedule that states assumptions, calendars, exclusions and risks honestly; a P50/P90 forecast with the method stated.
+
+Note: `prompt-oneshot.md` is the single-message variant (the baseline ran this scenario as a conversation): the same brief with one closing line that tells the agent to decide the approach itself and state it at the top of the deliverable. Send that file verbatim.

@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Agree the approach with me before you write anything.
 
 We are submitting our own EOT claim to the Employer and I want the approach agreed before anything goes out.
@@ -15,3 +9,5 @@ We are submitting our own EOT claim to the Employer and I want the approach agre
 **You have done the other side of this.** Last period you assessed Ilmatek’s claim against us and took it apart — notice, causation, concurrency, quantum basis. Assume the Engineer will do to us exactly what you did to them. Anything you would have rejected in their claim, do not put in ours.
 
 **What I want from the plan:** which heads you will run and what each one rests on; what our own records say that hurts us and how you propose to handle it; the basis for every figure and where it comes from; and anything you think we cannot support, said now rather than after it has gone out.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

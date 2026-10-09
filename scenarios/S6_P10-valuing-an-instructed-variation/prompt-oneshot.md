@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Agree the approach with me before you write anything.
 
 The Employer has instructed a variation and our subcontractor has quoted for it. I want the approach agreed before any number goes back to either of them.
@@ -15,3 +9,5 @@ The Employer has instructed a variation and our subcontractor has quoted for it.
 **You have the history.** You assessed Ilmatek's own claim in period 08 and you built our claim to the Employer in period 09. The same subcontract governs all three.
 
 **What I want from the plan:** which lines you accept, which you challenge and on what basis; where the rate for each line comes from; anything in the quotation that is not ours to pay; and anything you cannot support, said now rather than after it has gone to the Engineer.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Morning. I'm the project manager on Polaris DC-1 — the Aviapolis data campus in Vantaa. The commercial packages are settled and I'm taking the mobilisation pack to the board a week on Thursday. I need four documents, and they have to hang together, because the board will read them side by side.
 
 **Plan it first and walk me through it before you build anything.**
@@ -23,3 +17,5 @@ Morning. I'm the project manager on Polaris DC-1 — the Aviapolis data campus i
 - the **site logistics plan**, so your execution plan doesn't contradict it
 
 **How I want you to work.** State your assumptions wherever the data doesn't reach — especially payment terms and anything you assumed for cash-out timing; I'd rather read an assumption than a number that looks certain. The four documents must reconcile: if the deck says a number, the workbook says the same number. And don't tell me something is done without opening it and checking.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.

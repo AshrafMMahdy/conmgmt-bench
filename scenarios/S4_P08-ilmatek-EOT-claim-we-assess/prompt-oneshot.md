@@ -1,9 +1,3 @@
-> **One-shot variant.** The baseline ran this scenario as a conversation. To run it as a single message, send the prompt below followed by this line:
->
-> *Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.*
-
----
-
 Morning. Ilmatek have put a claim in and I need our position on it before I sit down with them.
 
 It's ILM-CLM-001, submitted 16 October, in the project folder under the Period 08 Ilmatek correspondence folder with their covering letter. They want 42 working days on the Section 1 date and EUR 486,000. Our own October site records are in the Period 08 folder under Progress Reports, and Meeting No 8 is with the rest of the minutes.
@@ -17,3 +11,5 @@ When you build it I want three things — an assessment document setting out the
 Before you build any of it, come back to me with how you intend to approach it. This one is going to be picked over and I would rather agree the approach now than unpick the output later.
 
 One more thing, and I mean it. We have been bitten before by AI-drafted work that cited clauses and figures which turned out not to exist. I am not going to give you the examples. Just understand that every reference you hand me will be opened and checked against the source, and a confident wrong citation costs me a great deal more than an honest gap would.
+
+Work through to the finished deliverables without pausing for my sign-off. Where the brief asks you to agree the approach with me first, decide it yourself and state the decision and its reasons at the top of the deliverable.
