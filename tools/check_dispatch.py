@@ -33,10 +33,12 @@ def read_rows(path, sheet=None):
     wb = openpyxl.load_workbook(path, data_only=True)
     ws = wb[sheet] if sheet else None
     if ws is None:
-        for cand in wb.worksheets:
-            head = [str(c.value or "").lower() for c in next(cand.iter_rows(min_row=1, max_row=1))]
-            if any(any(k in h for k in COLS["mixer"]) for h in head) and any(any(k in h for k in COLS["pour"]) for h in head):
-                ws = cand; break
+        for cand in wb.worksheets:   # the first sheet with a full header row anywhere (a title row above it is common)
+            for row in cand.iter_rows(min_row=1, max_row=12, values_only=True):
+                head = [str(h or "").strip().lower() for h in row]
+                if all(any(any(h == n or h.startswith(n) or n in h for n in names) for h in head) for names in COLS.values()):
+                    ws = cand; break
+            if ws is not None: break
         ws = ws or wb.worksheets[0]
     rows = []
     for r in ws.iter_rows(values_only=True):
