@@ -1,4 +1,4 @@
-"""Leaderboard chart: one stacked column per scenario, one segment per model run, scores relative to baseline 1.0.
+"""Leaderboard chart: one column per scenario, models OVERLAID (each segment = gain over the previous model; column top = best score), relative to baseline 1.0.
 
 Reads scenarios/<id>/scores/<run>.json (final score 0..1+) and baseline-1.0/grading.md (expectations mean, key counts)
 and writes an SVG. Relative score = run final / baseline outcome; a scenario without a baseline is plotted absolute
@@ -60,23 +60,29 @@ def main():
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="Inter, Segoe UI, Arial, sans-serif">',
          f'<rect width="{W}" height="{H}" fill="{SURFACE}"/>',
          f'<text x="{L}" y="30" font-size="16" font-weight="600" fill="{INK}">{a.title}</text>',
-         f'<text x="{L}" y="48" font-size="12" fill="{INK2}">Each column stacks the models run on that scenario; 1.00 = the published baseline run for that scenario.</text>']
+         f'<text x="{L}" y="48" font-size="12" fill="{INK2}">Each segment is the gain of one model over the model before it; the column top is the best score. 1.00 = the published baseline for that scenario.</text>']
     v = 0.0
     while v <= a.ymax + 1e-9:
         o.append(f'<line x1="{L}" x2="{L+pw}" y1="{y(v):.1f}" y2="{y(v):.1f}" stroke="{GRID}" stroke-width="1"/>')
         o.append(f'<text x="{L-8}" y="{y(v)+4:.1f}" font-size="11" text-anchor="end" fill="{INK2}">{v:.1f}</text>'); v += 0.5
     o.append(f'<text transform="translate(18,{T+ph/2:.0f}) rotate(-90)" font-size="12" text-anchor="middle" fill="{INK2}">score ÷ baseline</text>')
     for i, (label, segs, bmodel) in enumerate(rows):
-        x0 = L + i * slot + (slot - bw) / 2; cum = 0.0
-        for j, (run, mlabel, rel) in enumerate(segs):
-            if rel is None: continue
-            y1, y0 = y(cum + rel), y(cum); top = (j == len([s for s in segs if s[2] is not None]) - 1)
-            h = max(0, y0 - y1 - (0 if j == 0 else 2))   # 2px surface gap between stacked segments
-            rx = 4 if top else 0
-            o.append(f'<path d="M{x0:.1f},{y0 - (0 if j==0 else 2):.1f} v{-(h - rx):.1f} q0,{-rx} {rx},{-rx} h{bw - 2*rx:.1f} q{rx},0 {rx},{rx} v{h - rx:.1f} z" fill="{PALETTE[j % len(PALETTE)]}"/>')
-            if h >= 16: o.append(f'<text x="{x0+bw/2:.1f}" y="{(y0+y1)/2+4:.1f}" font-size="11" font-weight="600" text-anchor="middle" fill="#ffffff">{rel:.2f}</text>')
-            cum += rel
-        o.append(f'<text x="{x0+bw/2:.1f}" y="{y(cum)-6:.1f}" font-size="11" text-anchor="middle" fill="{INK}">Σ {cum:.2f}</text>')
+        x0 = L + i * slot + (slot - bw) / 2; top = 0.0; last = None
+        # OVERLAY, not a sum: each model's segment runs from the previous model's score up to its own, so the column top
+        # is the best score. A model that scores below the one before it gets a tick at its score instead of a segment.
+        live = [s for s in segs if s[2] is not None]
+        for j, (run, mlabel, rel) in enumerate(live):
+            col = PALETTE[runs.index(run) % len(PALETTE)]
+            if rel > top:
+                y1, y0 = y(rel), y(top); gap = 0 if j == 0 else 2
+                h = max(0, y0 - y1 - gap); rx = 4 if j == len(live) - 1 else 0
+                o.append(f'<path d="M{x0:.1f},{y0 - gap:.1f} v{-(h - rx):.1f} q0,{-rx} {rx},{-rx} h{bw - 2*rx:.1f} q{rx},0 {rx},{rx} v{h - rx:.1f} z" fill="{col}"/>')
+                if h >= 16: o.append(f'<text x="{x0+bw/2:.1f}" y="{(y0+y1)/2+4:.1f}" font-size="11" font-weight="600" text-anchor="middle" fill="#ffffff">{rel:.2f}</text>')
+                top = rel
+            else:
+                o.append(f'<line x1="{x0-6:.1f}" x2="{x0+bw+6:.1f}" y1="{y(rel):.1f}" y2="{y(rel):.1f}" stroke="{col}" stroke-width="2"/>')
+                o.append(f'<text x="{x0+bw+9:.1f}" y="{y(rel)+4:.1f}" font-size="10" fill="{col}">{rel:.2f}</text>')
+        o.append(f'<text x="{x0+bw/2:.1f}" y="{y(top)-6:.1f}" font-size="11" font-weight="600" text-anchor="middle" fill="{INK}">{top:.2f}</text>')
         o.append(f'<text x="{x0+bw/2:.1f}" y="{T+ph+20}" font-size="12" font-weight="600" text-anchor="middle" fill="{INK}">{label}</text>')
         o.append(f'<text x="{x0+bw/2:.1f}" y="{T+ph+36}" font-size="10" text-anchor="middle" fill="{INK2}">baseline: {bmodel or "none"}</text>')
     o.append(f'<line x1="{L}" x2="{L+pw}" y1="{y(1):.1f}" y2="{y(1):.1f}" stroke="{INK2}" stroke-width="1.5" stroke-dasharray="6 4"/>')
