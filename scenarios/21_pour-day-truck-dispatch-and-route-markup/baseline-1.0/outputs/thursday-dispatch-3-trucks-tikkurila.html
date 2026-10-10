@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thursday dispatch — 3 trucks (Tikkurila)</title>
+<style>
+:root{--ink:#1a2332;--mut:#5a6a7a;--line:#dfe6ee;--bg:#f6f8fb;--card:#fff;--t4:#1565c0;--t5:#6a1b9a;--t6:#ef6c00;--ok:#2e7d32;--wait:#ffb300;--drive:#90a4ae;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,Arial,sans-serif}
+body{background:var(--bg);color:var(--ink);padding:24px;max-width:1100px;margin:0 auto}
+h1{font-size:22px;margin-bottom:2px} h2{font-size:15px;margin:22px 0 8px;color:var(--ink)}
+.sub{color:var(--mut);font-size:13px;margin-bottom:14px}
+.answer{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 4px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:150px}
+.kpi .n{font-size:26px;font-weight:700} .kpi .l{font-size:11.5px;color:var(--mut)}
+.kpi.bind{border-left:4px solid #c62828}
+.gantt{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px 10px;overflow-x:auto}
+.grow{display:grid;grid-template-columns:64px 1fr;align-items:center;min-height:26px}
+.glabel{font-size:12px;font-weight:600;color:var(--mut)}
+.gtrack{position:relative;height:20px;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/9 - 1px),var(--line) calc(100%/9 - 1px),var(--line) calc(100%/9))}
+.bar{position:absolute;top:3px;height:14px;border-radius:3px;font-size:9.5px;color:#fff;line-height:14px;padding-left:4px;white-space:nowrap;overflow:hidden}
+.b-plant{opacity:.95}.b-drive{background:var(--drive)}.b-wait{background:var(--wait);color:#5d4700}.b-dis{background:var(--ok)}
+.b-reloc{background:repeating-linear-gradient(45deg,#2e7d32,#2e7d32 4px,#7cb342 4px,#7cb342 8px)}
+.axis{display:grid;grid-template-columns:64px 1fr;margin-top:4px}
+.axisticks{position:relative;height:16px}
+.tick{position:absolute;font-size:10px;color:var(--mut);transform:translateX(-50%)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 0;font-size:11.5px;color:var(--mut)}
+.sw{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tcard h3{font-size:13.5px;margin-bottom:6px}
+.tcard ul{list-style:none;font-size:12.5px;line-height:1.55}
+.tcard li b{font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:12.5px}
+th{background:#1f4e79;color:#fff;text-align:left;padding:7px 9px;font-weight:600;font-size:11.5px}
+td{padding:6px 9px;border-top:1px solid var(--line)}
+tr:nth-child(even) td{background:#fafcfe}
+.note{background:#fff8e1;border:1px solid #ffe082;border-radius:10px;padding:10px 14px;font-size:12.5px;margin-top:10px}
+.proof{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.6}
+.ask{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+button{background:#1f4e79;color:#fff;border:0;border-radius:7px;padding:9px 16px;font-size:13px;cursor:pointer}
+button:hover{background:#173a5c}
+.foot{color:var(--mut);font-size:11px;margin-top:14px}
+</style></head><body>
+<script>/* whiq chat bridge */function sendPrompt(t){try{parent.postMessage({type:'whiq-send-prompt',text:String(t||'')},'*');}catch(e){}}window.sendPrompt=sendPrompt;</script>
+<h1>Thursday pour dispatch — Tikkurila plant</h1>
+<div class="sub">P1 raft bay A 24 m³ · P2 core wall 16 m³ · P3 column heads 8 m³ · six 8 m³ loads · verified dispatch, 3 trucks</div>
+
+<div class="answer">
+  <div class="kpi"><div class="n">3</div><div class="l">trucks needed (T4, T5, T6) — release T1–T3</div></div>
+  <div class="kpi"><div class="n">48 m³</div><div class="l">6 loads · 3 trucks × 2 trips</div></div>
+  <div class="kpi"><div class="n">25 min</div><div class="l">tightest margin in the plan (gap / turnaround)</div></div>
+  <div class="kpi bind"><div class="n">25-min rule</div><div class="l">binding constraint: load continuity on P1</div></div>
+</div>
+
+<h2>Dispatch timeline (06:00–10:30)</h2>
+<div class="gantt" id="gantt"></div>
+<div class="legend">
+  <span><span class="sw" style="background:var(--t6)"></span>batch/loading (plant)</span>
+  <span><span class="sw" style="background:var(--drive)"></span>drive</span>
+  <span><span class="sw" style="background:var(--wait)"></span>waiting (site / pump)</span>
+  <span><span class="sw" style="background:var(--ok)"></span>discharge at pump</span>
+  <span><span class="sw b-reloc"></span>pump relocation</span>
+</div>
+
+<h2>Truck itineraries</h2>
+<div class="cards">
+  <div class="tcard"><h3><span class="dot" style="background:var(--t6)"></span>T6 — two trips</h3><ul>
+    <li><b>P1-L1</b> batch 06:05 → discharge 07:00–07:10</li>
+    <li><b>P2-L1</b> batch 08:00 → discharge 08:45–08:55</li>
+    <li style="color:var(--mut)">25-min turnaround buffer at plant</li></ul></div>
+  <div class="tcard"><h3><span class="dot" style="background:var(--t4)"></span>T4 — two trips</h3><ul>
+    <li><b>P1-L2</b> batch 06:35 → discharge 07:10–07:20</li>
+    <li><b>P2-L2</b> batch 08:10 → discharge 08:55–09:05</li>
+    <li style="color:var(--mut)">25-min turnaround buffer at plant</li></ul></div>
+  <div class="tcard"><h3><span class="dot" style="background:var(--t5)"></span>T5 — two trips</h3><ul>
+    <li><b>P1-L3</b> batch 06:25 → discharge 07:20–07:30</li>
+    <li><b>P3-L1</b> batch 08:20 → discharge 09:15–09:25</li>
+    <li style="color:var(--mut)">waits loaded 25 min <b>for the pump</b> (P2 ends 09:05, relocation 10 min) — within the 90-min rule</li></ul></div>
+</div>
+
+<h2>Why 3 is the minimum</h2>
+<div class="proof">
+A truck that delivered two P1 loads would need: return 25 + reload 10 + drive 25 = the second discharge starts <b>≥ 60 min</b> after the first ends — but the same-pour loads must be ≤ <b>25 min</b> apart. Impossible ⇒ no truck serves P1 twice ⇒ P1's three loads need <b>three distinct trucks</b>. Solver confirms: forcing ≤ 2 trucks is infeasible; 3 is achievable with every margin ≥ 25 min. Not binding: pump windows, the 90-min rule, or plant capacity.
+</div>
+
+<h2>Sensitivity — trucks needed if reality differs</h2>
+<table id="sens"></table>
+
+<div class="note"><b>Open decisions (by Wed 17:00):</b> ① slump/retarder limits with Tikkurila (T5 waits loaded 25 min on P3-L1; fallback = re-batch P3-L1 at 08:45, zero wait, freshness slack 50 min but no on-site buffer). ② pump priming time — plan absorbs ≤ 25 min; if the plant reports more, the dispatch is re-issued with a re-solve (the cap is structural, not a tweak).</div>
+
+<div class="ask"><button onclick="sendPrompt('Question about the Thursday 3-truck dispatch (Tikkurila): ')">Ask a follow-up in chat</button>
+<span style="font-size:11.5px;color:var(--mut);margin-left:10px">Full audit trail: Thursday_pour_dispatch_audit.xlsx (5 sheets)</span></div>
+<div class="foot">Batch = loading start at plant (10 min) · drive 25/35/20 min · discharge 10 min per 8 m³ load · placed ≤ 90 min from batching · ≤ 25 min between loads on the same pour · single shared pump, 10-min relocation between pour areas.</div>
+
+<script>
+const T0=360, T1=630, span=T1-T0, pct=t=>((t-T0)/span*100);
+const truckCol={T4:'#1565c0',T5:'#6a1b9a',T6:'#ef6c00'};
+const rows=[
+ {l:'P1-L1',t:'T6',plant:[365,375],drive:[375,400],wait:[400,420],dis:[420,430]},
+ {l:'P1-L2',t:'T4',plant:[395,405],drive:[405,430],dis:[430,440]},
+ {l:'P1-L3',t:'T5',plant:[385,395],drive:[395,420],wait:[420,440],dis:[440,450]},
+ {l:'P2-L1',t:'T6',plant:[480,490],drive:[490,525],dis:[525,535]},
+ {l:'P2-L2',t:'T4',plant:[490,500],drive:[500,535],dis:[535,545]},
+ {l:'P3-L1',t:'T5',plant:[500,510],drive:[510,530],wait:[530,555],dis:[555,565]},
+ {l:'Pump',t:'',dis:[[420,450],[525,545]],reloc:[[545,555]]},
+];
+const g=document.getElementById('gantt');
+for(const r of rows){
+  const row=document.createElement('div');row.className='grow';
+  const lab=document.createElement('div');lab.className='glabel';lab.textContent=r.l+(r.t?' · '+r.t:'');row.appendChild(lab);
+  const tr=document.createElement('div');tr.className='gtrack';
+  const seg=(a,b,cls,txt)=>{const d=document.createElement('div');d.className='bar '+cls;
+    d.style.left=pct(a)+'%';d.style.width=Math.max(pct(b)-pct(a),0.8)+'%';
+    if(cls==='b-plant')d.style.background=truckCol[r.t];
+    d.textContent=txt||'';tr.appendChild(d);};
+  if(r.plant)seg(r.plant[0],r.plant[1],'b-plant');
+  if(r.drive)seg(r.drive[0],r.drive[1],'b-drive');
+  if(Array.isArray(r.wait))r.wait.forEach(w=>seg(w[0],w[1],'b-wait'));else if(r.wait)seg(r.wait[0],r.wait[1],'b-wait');
+  if(Array.isArray(r.dis))r.dis.forEach(d=>seg(d[0],d[1],'b-dis'));else if(r.dis)seg(r.dis[0],r.dis[1],'b-dis');
+  if(r.reloc)r.reloc.forEach(d=>seg(d[0],d[1],'b-reloc'));
+  row.appendChild(tr);g.appendChild(row);
+}
+const ax=document.createElement('div');ax.className='axis';
+ax.innerHTML='<div></div><div class="axisticks">'+[360,390,420,450,480,510,540,570,600].map(t=>'<span class="tick" style="left:'+pct(t)+'%">'+('0'+(t/60|0)).slice(-2)+':'+('0'+t%60).slice(-2)+'</span>').join('')+'</div>';
+g.appendChild(ax);
+const sens=[['V0','base (as given)','3'],['V1','discharge 15 min/load','3'],['V2','return leg +5 min','3'],['V3','pump windows +15 min','3'],['V4','gap relaxed to 30 min','3'],['V5','plant opens 06:30','3'],['V6','discharge 15 + return +5','3'],['V7','return leg +15 min (traffic)','3'],['V8','discharge 20 min/load','3'],['V9','P1 drive 15 min (hypothetical)','2'],['V10','P1 drive 20 min (hypothetical)','2']];
+document.getElementById('sens').innerHTML='<tr><th>Variant</th><th>Change</th><th>Trucks</th></tr>'+sens.map(s=>'<tr><td><b>'+s[0]+'</b></td><td>'+s[1]+'</td><td>'+(s[2]==='3'?'<b>3</b>':s[2])+'</td></tr>').join('');
+</script>
+</body></html>

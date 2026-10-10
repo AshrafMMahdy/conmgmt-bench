@@ -1,0 +1,7 @@
+{
+  "baseline": "1.0",
+  "model": "GLM 5.3 Flash",
+  "mode": "chained (development chat, 2026-10-03)",
+  "same_conversation_as": null,
+  "note": "Run on an earlier wording of the brief while the optimisation skill was being built: no 15-minute discharge time, no explicit single-loading-bay rule, no project documents, and no route-markup deliverable. Expectation 5 is therefore not scored; expectation 1 is scored on the rules that brief stated."
+}

@@ -7,4 +7,4 @@ Models: PRE-01 to PRE-09 DeepSeek V4 Pro; PRE-10 and PRE-11 GPT 5.6 Luna; PRE-12
 Each `baseline-1.0/` holds the final deliverables (`outputs/`) and the score against `expectations.md` and the key (`grading.md`).
 
 
-Scenario 21 has no baseline yet (first graded runs are the 2026-10 model round). Scenario 22's baseline is the 2026-10-07 unattended scheduled run on DeepSeek V4 Flash; Hilma is live data, so a later run picks a different tender and is graded on the method.
+Scenario 21's baseline is the 2026-10-03 GLM 5.3 Flash chat in which the dispatch optimisation was first built, on an earlier wording of the brief (no 15-minute discharge, no markup deliverable): scored on the four expectations it was asked, 0.875. Scenario 22's baseline is the 2026-10-07 unattended scheduled run on DeepSeek V4 Flash; Hilma is live data, so a later run picks a different tender and is graded on the method.
