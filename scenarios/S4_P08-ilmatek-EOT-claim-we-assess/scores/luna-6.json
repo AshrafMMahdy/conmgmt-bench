@@ -1,0 +1,40 @@
+{
+  "model": "GPT 6 Luna",
+  "date": "2026-10-10",
+  "mode": "one-shot + 1 harness follow-up (reviewer re-run after a DeepSeek balance outage)",
+  "expectations": [
+    0.5,
+    1,
+    1,
+    1
+  ],
+  "key": {
+    "found": 2,
+    "partial": 1,
+    "missed": 1
+  },
+  "key_items": [
+    "A reject on causation (found)",
+    "B zero on the wrong ground: 4.3 late notice instead of valid-in-principle/1.3-4.1/Rev C 28 d/4.2 (partial)",
+    "C time-barred, merits noted (found)",
+    "D pay 12,400: refused EUR 0 (missed)"
+  ],
+  "expectation_reasons": [
+    "A, C right; D refused against our own plant log; B on the wrong ground",
+    "no invented numbers; Q9 8% mismatch flagged; unsourced items stated",
+    "4.3 / 21 days checked per head on Rev1 dates",
+    "assessment md, letter md, claimed-vs-assessed xlsx + audit md consistent (0 wd / EUR 0)"
+  ],
+  "deductions": {
+    "presented_without_review_approval_after_revision": -0.05,
+    "revision_loop_not_converging_10_rounds": -0.05
+  },
+  "follow_ups": 1,
+  "harness_follow_ups": 1,
+  "deliverables": "assessment md, response letter md, claimed-vs-assessed xlsx, audit md, review summary md",
+  "notes": "0 wd / EUR 0 (= Haiku); reviewer REVISE x10 never approved — asks matched the sealed key, Luna reworded instead of computing; 274 min / 908 msgs / 481 calls / 47M in 84% cached; plan 7/7 ticked step by step",
+  "expectations_mean": 0.875,
+  "key_score": 0.625,
+  "outcome": 0.75,
+  "final": 0.65
+}
