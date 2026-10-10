@@ -1,0 +1,36 @@
+{
+  "model": "GPT 6 Luna",
+  "date": "2026-10-11",
+  "mode": "one-shot refusal + 2 follow-ups (restart, export push) + 2 question cards + 2 harness step-cap pauses",
+  "expectations": [
+    1,
+    0,
+    0.5,
+    0.5,
+    0.5,
+    1
+  ],
+  "key": null,
+  "expectation_reasons": [
+    "76 activities, 1/1 open ends, no constraints, no cycles (42-day terminal gap admitted)",
+    "76 activities for a 4-hall DC, halls in series - not Level 4, not parallel fronts",
+    "every section flagged in a table but 515-634 days late from its own serial logic (Sonnet met S3/S4 on the same inputs)",
+    "rates doc; 67 duration claims unsupported/proxy by its own check",
+    "EUR 61.7m of 92.4m mapped, EUR 30.7m stated as unmapped gap (after being told not to plug)",
+    "XER (76/169/35), workbook (9 sheets), BoS docx, P50 953 / P90 1,028 wd"
+  ],
+  "deductions": {
+    "follow_up_refusal_restart": -0.1,
+    "follow_up_export_push": -0.1,
+    "presented_without_review_approval_after_revision": -0.05
+  },
+  "follow_ups": 2,
+  "question_cards": 2,
+  "harness_pauses": 2,
+  "deliverables": "XER, workbook xlsx, BoS docx, programme md, rates md, cost-mapping md (all open, labelled DRAFT)",
+  "notes": "Refused the package as synthetic in one shot; after the client restart built a 76-row serial network finishing Jul 2029 vs Jan 2028; reviewer revise x10 never approved; plan ticked step by step; 188 min / 1,528 msgs / 881 calls / 177M in 96% cached",
+  "expectations_mean": 0.583,
+  "key_score": null,
+  "outcome": 0.583,
+  "final": 0.333
+}
