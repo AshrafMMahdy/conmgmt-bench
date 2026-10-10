@@ -1,0 +1,41 @@
+{
+  "model": "GPT 6 Luna",
+  "date": "2026-10-10",
+  "mode": "one-shot + 2 question cards + 1 restart (+1 harness Continue after the 300-step cap)",
+  "expectations": [
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "key": {
+    "found": 3,
+    "partial": 0,
+    "missed": 0
+  },
+  "key_items": [
+    "3 mixers",
+    "feasible dispatch (checker)",
+    "P1 proof"
+  ],
+  "expectation_reasons": [
+    "dispatch FEASIBLE on check_dispatch.py (every version)",
+    "3 mixers; P1 three arrivals within 50 min vs 75-min cycle (15+25+10+25)",
+    "Optimize skill; exact check 2 infeasible / 3 feasible; method stated",
+    "5-tab workbook, one row per load with the asked columns, agrees with the chat",
+    "April sheet converted by its own code into a squashed strip on a blank page; 12 annotations off the plan; final Print PDF same; presented as the one-page view, not flagged"
+  ],
+  "deductions": {
+    "follow_up_needed_to_finish": -0.1,
+    "unnecessary_question_card": -0.05
+  },
+  "follow_ups": 3,
+  "harness_pauses": 1,
+  "deliverables": "dispatch xlsx (feasible), markup PDF (unreadable), PNG/SVG overlays",
+  "notes": "Stopped at 20 min with nothing (watermark refusal, third question in prose); after the persona follow-up solved it, reviewer approve x2; 300-step cap hit once (harness); plan ticked step by step; 90 min / 842 msgs / 433 calls / 37M in 91% cached",
+  "expectations_mean": 0.8,
+  "key_score": 1.0,
+  "outcome": 0.8,
+  "final": 0.65
+}
