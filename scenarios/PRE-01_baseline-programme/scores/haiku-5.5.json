@@ -1,0 +1,35 @@
+{
+  "model": "Claude Haiku 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot + 1 follow-up",
+  "expectations": [
+    1,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    1
+  ],
+  "key": null,
+  "expectation_reasons": [
+    "after the follow-up: 133 activities, 1 start/1 finish, no cycles, 14-activity CP Commencement->handover (hard date removed)",
+    "133 rows for a 4-hall DC, serial hall commissioning, scope coverage unconfirmed by the reviewer",
+    "S1 flagged late with arithmetic; S2-S4 driven by lags calibrated to contract dates; milestone names embed contract dates that contradict computed dates",
+    "rates doc from history, but 4/126 claims fully grounded by its own admission",
+    "cost = BOQ sell value 92.4M, cost accounts empty, 75 rows without quantity",
+    "XER opens (133 tasks/216 links), workbook, BoS states DRAFT honestly, P50/P90 with method"
+  ],
+  "deductions": {
+    "follow_up_needed": -0.1,
+    "plan_not_kept": -0.05,
+    "presented_without_review_approval_after_revision": -0.05,
+    "delivered_file_defect_workbook_vs_xer_dates": -0.05
+  },
+  "follow_ups": 1,
+  "deliverables": "XER, BoS docx, workbook xlsx, rates md (all open, labelled draft)",
+  "notes": "Stopped at 3 questions one-shot; finished after 1 persona follow-up; reviewer REVISE x5 never approved; plan 7/15 then 0/9; 44+17 min",
+  "expectations_mean": 0.667,
+  "key_score": null,
+  "outcome": 0.667,
+  "final": 0.417
+}

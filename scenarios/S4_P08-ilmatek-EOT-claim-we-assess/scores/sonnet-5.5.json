@@ -1,0 +1,36 @@
+{
+  "model": "Claude Sonnet 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot",
+  "expectations": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "key": {
+    "found": 2,
+    "partial": 2,
+    "missed": 0
+  },
+  "key_items": [
+    "A reject on causation + as-built labour (found)",
+    "B reserved, 4.2 applied, PMC-014; Rev C 28-day window not named (partial)",
+    "C time-barred, merits stated (found)",
+    "D EUR 9,018 pipefitters only vs 12,400 full (partial, record-based)"
+  ],
+  "expectation_reasons": [
+    "every head: entitlement, causation, quantum, position, reason, from our records",
+    "quantum recomputed with formulas + code cross-check; 8% not reproducing noted",
+    "4.3 checked on Rev1 dates; Rev0 v Rev1 trap stated",
+    "assessment docx, letter docx, QS workbook (Summary/Quantum/DayCounts/Progress/Labour) consistent (0 wd / EUR 9,018)"
+  ],
+  "deductions": {},
+  "follow_ups": 0,
+  "deliverables": "assessment docx, response letter docx, QS workbook xlsx (all open)",
+  "notes": "Reviewer REVISE (3 minor) -> fixed -> APPROVE; plan ticked; 36 min",
+  "expectations_mean": 1.0,
+  "key_score": 0.75,
+  "outcome": 0.875,
+  "final": 0.875
+}

@@ -1,0 +1,39 @@
+{
+  "model": "Claude Haiku 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot",
+  "expectations": [
+    0.5,
+    1,
+    1,
+    1
+  ],
+  "key": {
+    "found": 2,
+    "partial": 1,
+    "missed": 1
+  },
+  "key_items": [
+    "A reject on causation (found)",
+    "B valid/nothing now, 4.2 concurrency missing (partial)",
+    "C time-barred, merits good (found)",
+    "D pay 12,400: refused EUR 0 (missed)"
+  ],
+  "expectation_reasons": [
+    "heads assessed with positions, but Head D refused against our own plant log (asks Ilmatek for timesheets)",
+    "no invented numbers; notes 8% does not reproduce",
+    "4.3 21 days applied; Rev C SP-15 28 days cited correctly",
+    "assessment docx, letter docx, QS xlsx consistent (0 wd / EUR 0)"
+  ],
+  "deductions": {
+    "presented_without_review_approval_no_revision": -0.1,
+    "plan_not_kept": -0.05
+  },
+  "follow_ups": 0,
+  "deliverables": "assessment docx, response letter docx, QS workbook xlsx (all open)",
+  "notes": "Position 0 wd / EUR 0 vs key 0 wd / EUR 12,400; reviewer REVISE 11 issues, presented as unapproved draft; sub-agents killed at 8-min cap (harness)",
+  "expectations_mean": 0.875,
+  "key_score": 0.625,
+  "outcome": 0.75,
+  "final": 0.6
+}

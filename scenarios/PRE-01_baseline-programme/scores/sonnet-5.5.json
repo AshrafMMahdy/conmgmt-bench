@@ -1,0 +1,34 @@
+{
+  "model": "Claude Sonnet 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot",
+  "expectations": [
+    1,
+    1,
+    1,
+    1,
+    0.5,
+    1
+  ],
+  "key": null,
+  "expectation_reasons": [
+    "233 activities, 465 links, 1/1 open ends, no constraint dates, CP from logic",
+    "233 rows, four halls as fronts, resource + cost loaded",
+    "S1 +103 d / S2 +55 d proven from grid + transformer inputs and flagged with options; S3/S4 inside; DNO + DH heating season handled",
+    "17 rates, every derivation in the rates docx, margins stated, judgement flagged",
+    "102 BOQ lines -> 172 activities, total reconciles to 92.4M, but 60/233 rows uncosted",
+    "XER opens (233 tasks/465 links/48 rsrc), 6-sheet workbook, 11-section BoS, P50/P90 + reference class + DCMA"
+  ],
+  "deductions": {
+    "plan_not_kept": -0.05,
+    "presented_without_review_approval_after_revision": -0.05,
+    "delivered_file_defect_stale_analyses": -0.05
+  },
+  "follow_ups": 0,
+  "deliverables": "XER, BoS docx, resource/cost workbook xlsx, rates docx, CSV, programme md (all open, labelled unapproved)",
+  "notes": "One-shot complete, 0 questions; reviewer REVISE x3 never approved (S1/S2 input conflict, criticality 2.3%, stale stashes); optimise/DCMA/review run before the last edit; plan 6/11; 80 min",
+  "expectations_mean": 0.917,
+  "key_score": null,
+  "outcome": 0.917,
+  "final": 0.767
+}

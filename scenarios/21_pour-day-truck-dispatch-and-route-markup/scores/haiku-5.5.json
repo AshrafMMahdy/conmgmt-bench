@@ -1,0 +1,40 @@
+{
+  "model": "Claude Haiku 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot",
+  "expectations": [
+    1,
+    1,
+    0.5,
+    1,
+    0
+  ],
+  "key": {
+    "found": 3,
+    "partial": 0,
+    "missed": 0
+  },
+  "key_items": [
+    "3 mixers",
+    "feasible dispatch (checker)",
+    "P1 proof"
+  ],
+  "expectation_reasons": [
+    "dispatch FEASIBLE on check_dispatch.py",
+    "3 mixers + P1 50-min span vs 75-min cycle stated",
+    "method: ad-hoc run_code prints contradict each other (N=3 INFEASIBLE vs OPTIMAL); no solver record",
+    "workbook has mixer/pour/load/batched/at pump/discharged, agrees with chat",
+    "route markup not produced; listed as an open item (honest, but 0)"
+  ],
+  "deductions": {
+    "presented_without_review_approval_no_revision": -0.1,
+    "plan_not_kept": -0.05
+  },
+  "follow_ups": 0,
+  "deliverables": "dispatch xlsx (opens, feasible); no markup",
+  "notes": "Reviewer REVISE, presented anyway; plan 1/15; 32 min wall (20 min OCR regression = harness)",
+  "expectations_mean": 0.7,
+  "key_score": 1.0,
+  "outcome": 0.7,
+  "final": 0.55
+}

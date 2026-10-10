@@ -1,0 +1,41 @@
+{
+  "model": "Claude Sonnet 5.5",
+  "date": "2026-10-09",
+  "mode": "one-shot",
+  "expectations": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "key": {
+    "found": 3,
+    "partial": 0,
+    "missed": 0
+  },
+  "key_items": [
+    "3 mixers",
+    "feasible dispatch (checker)",
+    "P1 proof"
+  ],
+  "expectation_reasons": [
+    "dispatch FEASIBLE, 20 min slack on P2 window",
+    "3 mixers; P1 hand bound + CP-SAT exact search (1,2 infeasible) + what-would-change table",
+    "modelled and solved (CP-SAT via Optimize skill), method stated",
+    "14-tab workbook, columns present, Checks tab, agrees with chat",
+    "markup drawn on the real April sheet: routes, 3 pumps, waiting lane (cosmetic defects: '?' line breaks, one overlap, not visually checked)"
+  ],
+  "deductions": {
+    "presented_without_review_approval_after_revision": -0.05,
+    "plan_not_kept": -0.05,
+    "delivered_file_defect_markup_cosmetics": -0.05
+  },
+  "follow_ups": 0,
+  "deliverables": "dispatch xlsx (14 tabs), markup PDF on the April sheet, both open",
+  "notes": "Reviewer REVISE x2, presented and said so; plan 0/6; sandbox lost at 60 min (harness), rebuilt; 92 min wall",
+  "expectations_mean": 1.0,
+  "key_score": 1.0,
+  "outcome": 1.0,
+  "final": 0.85
+}
