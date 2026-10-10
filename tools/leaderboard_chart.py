@@ -60,7 +60,7 @@ def main():
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="Inter, Segoe UI, Arial, sans-serif">',
          f'<rect width="{W}" height="{H}" fill="{SURFACE}"/>',
          f'<text x="{L}" y="30" font-size="16" font-weight="600" fill="{INK}">{a.title}</text>',
-         f'<text x="{L}" y="48" font-size="12" fill="{INK2}">Each column stacks the models run on that scenario; 1.00 = that scenario's published baseline run.</text>']
+         f'<text x="{L}" y="48" font-size="12" fill="{INK2}">Each column stacks the models run on that scenario; 1.00 = the published baseline run for that scenario.</text>']
     v = 0.0
     while v <= a.ymax + 1e-9:
         o.append(f'<line x1="{L}" x2="{L+pw}" y1="{y(v):.1f}" y2="{y(v):.1f}" stroke="{GRID}" stroke-width="1"/>')

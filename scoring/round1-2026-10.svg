@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" font-family="Inter, Segoe UI, Arial, sans-serif">
 <rect width="760" height="480" fill="#fcfcfb"/>
 <text x="70" y="30" font-size="16" font-weight="600" fill="#0b0b0b">ConMgmt-Bench — score relative to baseline 1.0</text>
-<text x="70" y="48" font-size="12" fill="#52514e">Each column stacks the models run on that scenario; 1.00 = the published baseline run (same scenario, same expectations and key).</text>
+<text x="70" y="48" font-size="12" fill="#52514e">Each column stacks the models run on that scenario; 1.00 = the published baseline run for that scenario.</text>
 <line x1="70" x2="730" y1="390.0" y2="390.0" stroke="#e6e5e1" stroke-width="1"/>
 <text x="62" y="394.0" font-size="11" text-anchor="end" fill="#52514e">0.0</text>
 <line x1="70" x2="730" y1="357.0" y2="357.0" stroke="#e6e5e1" stroke-width="1"/>
